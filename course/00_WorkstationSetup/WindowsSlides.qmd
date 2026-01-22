@@ -316,14 +316,129 @@ We will then proceed and select [install 64-bit Git for Windows Setup]{.underlin
 ---
 
 ::: {.notes}
-(Please note, we are missing screenshots portion of Git install on Windows, if you want to help, take screenshots as you set up your install, and post them to this [issue](https://github.com/UMGCCCFCSR/CytometryInR/issues/6) page so that we can update the documentation. Thanks! David)
-
 As was the case with our installation of R and Rtools, a pop-up will appear asking for a location to save the installer to. 
 
 Once downloaded, double-click and proceed with the installation. 
 
-It is best to just accept all the default options, to avoid wandering down a ["What is Vim?!?"](https://www.vim.org/) rabbit-hole.
+You will be asked to accept the Git License (which is the free copyleft GPL2 license, which we will learn about later in the course).
 :::
+
+![](images/Windows/02_GitLicense.png)
+
+<br>
+
+---
+
+::: {.notes}
+Then you will be asked to select the folder to save to software to (usually your Programs folder)
+:::
+
+![](images/Windows/03_GitDestination.png)
+
+<br>
+
+---
+
+::: {.notes}
+At this point, the Git installer will ask a series of increasingly niche questions. It is best to just accept all the default options, to avoid wandering too far down a ["What is Vim?!?"](https://www.vim.org/) rabbit-hole.
+:::
+
+![](images/Windows/04_GitComponents.png)
+
+<br>
+
+---
+
+![](images/Windows/05_GitStartMenu.png)
+
+<br>
+
+---
+
+![](images/Windows/06_GitWhatsVim.png)
+
+<br>
+
+---
+
+![](images/Windows/07_GitDecide.png)
+
+<br>
+
+---
+
+![](images/Windows/08_GitCommandLine.png)
+
+<br>
+
+---
+
+![](images/Windows/09_GitBundledSSH.png)
+
+<br>
+
+---
+
+![](images/Windows/10_GitHTTPS.png)
+
+<br>
+
+---
+
+![](images/Windows/11_GitUnix.png)
+
+<br>
+
+---
+
+![](images/Windows/12_GitEmulator.png)
+
+<br>
+
+---
+
+![](images/Windows/13_GitPull.png)
+
+<br>
+
+---
+
+![](images/Windows/14_GitCredentialManager.png)
+
+<br>
+
+---
+
+::: {.notes}
+Having made it through all the niche customization screens, we finally reach the install button. 
+:::
+
+![](images/Windows/15_GitFileCatch.png)
+
+<br>
+
+---
+
+::: {.notes}
+We then can wait for the install to complete.
+:::
+
+![](images/Windows/16_GitInstalling.png)
+
+<br>
+
+---
+
+::: {.notes}
+And success, we have now installed Git. 
+:::
+
+![](images/Windows/17_GitInstalled.png)
+
+<br>
+
+---
+
 
 ## Installing Positron
 
