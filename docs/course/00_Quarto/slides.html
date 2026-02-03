@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.7.32">
 
   <meta name="author" content="David Rach">
-  <meta name="dcterms.date" content="2026-01-21">
+  <meta name="dcterms.date" content="2026-02-01">
   <title>Cytometry in R – Introduction to Quarto</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -147,7 +147,7 @@ David Rach
 </div>
 </div>
 
-  <p class="date">2026-01-21</p>
+  <p class="date">2026-02-01</p>
 </section>
 <section class="slide level2">
 
@@ -158,698 +158,915 @@ David Rach
 </section>
 <section id="background" class="title-slide slide level1 center">
 <h1>Background</h1>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>In the <a href="../../course/00_Git/index.html">previous section</a>, we briefly introduced Quarto Markdown Documents (.qmd) while working our way through version control concepts. Since we will be using .qmd files extensively throughout this course, this section will explore how we can build on these concepts to modify these files to create a variety of outputs (ranging from Word documents, pdfs, html webpages). We will also take a look at how to use code-chunk arguments to control what code is run or displayed within.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 
 <section>
 <section id="getting-started" class="title-slide slide level1 center">
 <h1>Getting Started</h1>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>We will start off by creating a a new .QMD document within our GitPractice repository. As we saw in the <a href="../../course/00_Git/index.html">previous section</a>, the basic elements include:</p>
 <ol type="1">
-<li>A <a href="">YAML</a> header, that dictates formatting</li>
-<li>The text body, where we can include documentation</li>
-<li>Code-block chunks, in which we can write code that can be executed, as well as # comments</li>
+<li class="fragment">A <a href="">YAML</a> header, that dictates formatting</li>
+<li class="fragment">The text body, where we can include documentation</li>
+<li class="fragment">Code-block chunks, in which we can write code that can be executed, as well as # comments</li>
 </ol>
-<p><img data-src="images/00_BasicQMD.png"></p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-<p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
+<section class="slide level2">
+
+
+<img data-src="images/00_BasicQMD.png" class="r-stretch"></section>
 <section id="renderpreview" class="slide level2">
 <h2>Render/Preview</h2>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>The preview button, at the upper-left end of the Editor, is used to render/knit a quarto document. This triggers the process by which code-chunks are run, and then the outputs are cobbled together into the file format type designated by the YAML header.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/01_Preview.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
+<section class="slide level2">
+
+
+<img data-src="images/01_Preview.png" class="r-stretch"></section>
 <section class="slide level2">
 
 <h3 id="html">HTML</h3>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>In this case, the YAML header’s format argument is set to html. After clicking preview, we can see the various rendering steps appear in the console below. Since no errors occured, the html document was formed succesfully and appears as a file in the left side-bar. Additional, a preview of the document appears in the View tab of the right side-bar, allowing for quick visual inspection.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/03_Preview.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/03_Preview.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Alternatively, we can render a document via the terminal, by entering “quarto render”, followed by the name of the document.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/02_Preview.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/02_Preview.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>This results similar process as what we saw with the preview button</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/04_Preview.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/04_Preview.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>We can also open the .html document via our File Explorer, which will open it within our web browser.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/05_HTML.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/05_HTML.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Quarto documents can be rendered (previewed) in other formats besides html. These include pdf, Word documents (docx), and slides (revealjs). This is set by the format argument within the YAML header.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+</div>
+</div>
+</div>
+</div>
+</div>
 <h3 id="pdf">PDF</h3>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>By switching the format argument from html to pdf, we can render the document as a pdf</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/06_PDF.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
-<p>We can see the pdf is now listed in the list of files, with a preview shown on the right side-bar.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 
-<img data-src="images/06_PDFOutput.png" class="r-stretch"><p><br></p>
+<img data-src="images/06_PDF.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
+<p>We can see the pdf is now listed in the list of files, with a preview shown on the right side-bar.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
+<section class="slide level2">
+
+
+<img data-src="images/06_PDFOutput.png" class="r-stretch"></section>
 <section class="slide level2">
 
 <h3 id="docx">Docx</h3>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>We can also generate Word documents (.docx) as well.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/07_Docx.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/07_Docx.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>In this case, we can see that a Word document file was created, but nothing appears in the View tab. This is because the format is not yet supported for the View tab. We can however open and view the Word document via our File explorer.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/07_DocxRender.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
-<p>Which shows a Word Document style output.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 
-<img data-src="images/07_DocxOutput.png" class="r-stretch"><p><br></p>
+<img data-src="images/07_DocxRender.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
+<p>Which shows a Word Document style output.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
+<section class="slide level2">
+
+
+<img data-src="images/07_DocxOutput.png" class="r-stretch"></section>
 <section id="yaml" class="slide level2">
 <h2>YAML</h2>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>We can additionally provide additional custom inputs to the YAML header. A couple examples include providing the document author and date.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/08_Yaml.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
-<p>Which we can see are updated after we preview/render.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 
-<img data-src="images/08_Yaml2.png" class="r-stretch"><p><br></p>
+<img data-src="images/08_Yaml.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
+<p>Which we can see are updated after we preview/render.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
+<section class="slide level2">
+
+
+<img data-src="images/08_Yaml2.png" class="r-stretch"></section>
 <section id="table-of-contents" class="slide level2">
 <h2>Table of Contents</h2>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>In the previous section, we saw that we could provide headings and subheadings to our .qmd file by placing a # at the start of a line in the text portion of the document. A subheading was designated by a ##, with additional hierarchy being designated by appending an additional #.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/09_Headers.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/09_Headers.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>We can use the heading information to generate a table of contents for our document. To do this, we add a toc argument to the yaml header, and set it to TRUE. After rendering, it appears on the upper-right side of the document.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/10_TOC.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/10_TOC.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Notice, that the subheaders do not appear currently within the TOC.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/11_HeaderSubs.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
-<p>We can fix this by setting a toc-expand argument in the YAML to true.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 
-<img data-src="images/12_TOCexpanded.png" class="r-stretch"><p><br></p>
+<img data-src="images/11_HeaderSubs.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
+<p>We can fix this by setting a toc-expand argument in the YAML to true.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
+<section class="slide level2">
+
+
+<img data-src="images/12_TOCexpanded.png" class="r-stretch"></section>
 <section id="code-chunk-arguments" class="slide level2">
 <h2>Code Chunk Arguments</h2>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>As we briefly touched on in the <a href="../../course/00_Git/index.html">last section</a>, code-chunks can be modified by including arguments, which affect whether a particular code chunk gets evaluated. In that example, we included a “#| eval: FALSE” to the install commands since we did not want them to be re-run subsequently. We will take a closer look at the other arguments in this section.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+</div>
+</div>
+</div>
+</div>
+</div>
 <h3 id="eval">Eval</h3>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>The code-chunk argument, “Eval”, is used to determine when a code-chunk get’s evaluated. When set to true (or by default if no eval argument is included), the code-chunks contents will be run/executed, and the output will appear. We can see this in the html output, as below the code block, we get back the address of my working directory.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/13_EvalTRUE.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/13_EvalTRUE.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>When we switch the Eval argument to FALSE, and then render the document, we can see that the code block remains, but we do not get any output for the code contained within.</p>
 <p>In every-day practice, we will “use eval: FALSE” arguments when we want to keep the code for later use, but want to manually run the code contained within ourselves.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/14_EvalFALSE.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
+<section class="slide level2">
+
+
+<img data-src="images/14_EvalFALSE.png" class="r-stretch"></section>
 <section class="slide level2">
 
 <h3 id="echo">Echo</h3>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>The code-block argument “echo” dictates whether the code within the code-block is displayed within the document. So in the case when “echo: true”, we get both the code displayed, as well as the output that gets returned by the code.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/16_EchoTRUE.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/16_EchoTRUE.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>By contrast, when “echo: FALSE”, we do not have the code displayed, but do get the output of that code being run.</p>
 <p>In daily-practice, “echo: FALSE” gets often used when generating plots that we want to include in the report, without the code that generated them being displayed.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/17_EchoFALSE.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
+<section class="slide level2">
+
+
+<img data-src="images/17_EchoFALSE.png" class="r-stretch"></section>
 <section class="slide level2">
 
 <h3 id="include">Include</h3>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>The next code-chunk argument is include. Unlike echo, which focuses on whether the code is displayed, but still returns the output, include dictates behavior of both the code-block and it’s output. Unlike eval however, it will still run the code, which allows it to be available for the next code-chunk that might need it. When we set “include: false”, no trace of that code-chunk is present in the document. This is useful when making reports where we do not want to include the code used to generate a particular figure.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/15_IncludeFALSE.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
-<p>By contrast, when we set “include: true”, the code block and it’s output is once again included within the rendered document.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 
-<img data-src="images/15_IncludeTRUE.png" class="r-stretch"><p><br></p>
+<img data-src="images/15_IncludeFALSE.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
+<p>By contrast, when we set “include: true”, the code block and it’s output is once again included within the rendered document.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
+<section class="slide level2">
+
+
+<img data-src="images/15_IncludeTRUE.png" class="r-stretch"></section>
 <section class="slide level2">
 
 <h3 id="code-fold">Code-Fold</h3>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>One of my favorites is “code-fold”. When we set it as “code-fold: show”, it displays the code, but provides a drop-down arrow that can be closed to compress the code.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/18_CodeFoldShow.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
-<p>In contrast, if we want to make the code-available for those that are interested, but not directly visible, we can set as “code-fold: true”</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 
-<img data-src="images/19_CodeFoldTRUE.png" class="r-stretch"><p><br></p>
+<img data-src="images/18_CodeFoldShow.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
+<p>In contrast, if we want to make the code-available for those that are interested, but not directly visible, we can set as “code-fold: true”</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
+<section class="slide level2">
+
+
+<img data-src="images/19_CodeFoldTRUE.png" class="r-stretch"></section>
 <section class="slide level2">
 
 <h3 id="warnings">Warnings</h3>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Within R, when code is executed, in addition to returning the output, R is capable of returning warnings (when something is not as expected, but not sufficient to elicit an error with a complete stop) or a message (text output that gets displayed, often telling about progress). While these are useful when running code yourself, it can be annoying when generating a report and the 2nd page is a bunch of warning text being displayed.</p>
 <p>For example, when the R package <code>ggcyto</code> is loaded via the library call, it will automatically load several other packages, which typically results in these messages being outputted:</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/21_WarningMessageTrue.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
-<p>We can therefore set that code-chunk’s warning/message arguments to FALSE, therefore silencing the message outputs that would otherwise clutter up our report.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 
-<img data-src="images/20_WarningMessageFalse.png" class="r-stretch"><p><br></p>
+<img data-src="images/21_WarningMessageTrue.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
+<p>We can therefore set that code-chunk’s warning/message arguments to FALSE, therefore silencing the message outputs that would otherwise clutter up our report.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
+<section class="slide level2">
+
+
+<img data-src="images/20_WarningMessageFalse.png" class="r-stretch"></section>
 <section id="text-styles" class="slide level2">
 <h2>Text Styles</h2>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Quarto primarily uses Markdown for text styling. Consequently, markdown arguments can be used within the text to change how various text appears.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/22_StylisticElements.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/22_StylisticElements.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>For a regular text, <em>This</em> single asterisk on each side of a word will italicize.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/23_Italics.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/23_Italics.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>When the number of asterisk is doubled, <strong>This</strong> word is bolded.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/24_Bold.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/24_Bold.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>When three asterisk are used, <strong><em>both</em></strong> are applied.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/25_ItalicBold.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/25_ItalicBold.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>For an underscore, the <u>word</u> of interest is surrounded by square brackets “[]”, with “{.underline}” adjacent.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="hyperlinks" class="slide level2">
 <h2>Hyperlinks</h2>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>You can link to a website by surrounding word of interest in [] and placing the url within () adjacent to it.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/26_Hyperlinks.png" class="r-stretch"><p><br></p>
-</section>
-<section id="images" class="slide level2">
-<h2>Images</h2>
-<aside class="notes">
-<p>You can place images by adding the following, as long as the file.path to the image is correctly formatted. In my case, this is why I include images folders within my folders to simplify the copy and paste.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/27_Images.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
 
-<img data-src="images/28_ImagesArgs.png" class="r-stretch"><p><br></p>
+<img data-src="images/26_Hyperlinks.png" class="r-stretch"></section>
+<section id="images" class="slide level2">
+<h2>Images</h2>
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
+<p>You can place images by adding the following, as long as the file.path to the image is correctly formatted. In my case, this is why I include images folders within my folders to simplify the copy and paste.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
+<section class="slide level2">
+
+
+<img data-src="images/27_Images.png" class="r-stretch"></section>
+<section class="slide level2">
+
+
+<img data-src="images/28_ImagesArgs.png" class="r-stretch"></section>
 <section class="slide level2">
 
 </section></section>
 <section id="wrap-up" class="title-slide slide level1 center">
 <h1>Wrap-up</h1>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>We have now briefly looked at various common customizations within a Quarto Markdown Document that can allow us to better document what we are doing, and control whether various code chunk outputs are displayed in the final rendered document.</p>
 <p>In the <a href="../../course/00_Homeworks/">next section</a>, we will cover some course logistics by investigate using the Discussions Forums to get community feedback throughout the course, when to use the Issues page, as well as how to open a pull request to submit any completed optional Take-Home problems to get course instructor feedback.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 
 <section id="additional-resources" class="title-slide slide level1 center">

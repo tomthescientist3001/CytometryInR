@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.7.32">
 
   <meta name="author" content="David Rach">
-  <meta name="dcterms.date" content="2026-01-21">
+  <meta name="dcterms.date" content="2026-02-01">
   <title>Cytometry in R – Using Floreada</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -147,7 +147,7 @@ David Rach
 </div>
 </div>
 
-  <p class="date">2026-01-21</p>
+  <p class="date">2026-02-01</p>
 </section>
 <section class="slide level2">
 
@@ -158,22 +158,26 @@ David Rach
 </section>
 <section id="background" class="title-slide slide level1 center">
 <h1>Background</h1>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>As a “Cytometry in R” course, we will primarily be working in R. However, within our daily workflows and projects here at our flow cytometry core, we often use various flow cytometry softwares (like <a href="https://flowjo.com/flowjo10/download">FlowJo</a> or <a href="https://denovosoftware.com/">FCS Express</a>) for various tasks. Fortunately, R packages like <a href="https://www.bioconductor.org/packages/release/bioc/html/CytoML.html">CytoML</a> can allow us to import our manually drawn gates from existing FlowJo workspaces so that we can work with them in R.</p>
 <p>For this course, we are adamant about staying neutral in regards to both commercial software or instrument vendors as much as possible. If they have worked with the open-source community to make their files readable and accessible via R, we will showcase how to integrate those tools into your own workflows. At the same time, this being a <u><strong>free</strong></u> course, it doesn’t make sense to turn around and ask you to go and either free trial or buy an expensive software license just to see how a particular free R package works.</p>
 <p>Fortunately, for showing how to use this <a href="https://www.bioconductor.org/packages/release/bioc/html/CytoML.html">CytoML</a> functionality, we can use <a href="https://floreada.io/">Floreada.io</a>. It is a simple (but free) web-based analysis platform that can be used to draw manual gates for your .fcs files of interest. These can then be saved as Floreada workspaces for later use. We typically recommend it to users from labs that do flow experiments infrequently. Fortunately thanks to the hard work of its <a href="https://floreada.io/about">developers</a>, it can also save the gated files as <a href="https://flowjo.com/flowjo10/download">FlowJo</a> v10 .wsp files, which with a small workaround become usable within the <a href="https://www.bioconductor.org/packages/release/bioc/html/CytoML.html">CytoML</a> pipeline.</p>
 <p>To facilitate this, we will provide a small walk-through of how to use it for those who want to create a .wsp with their own .fcs files for <a href="https://umgcccfcsr.github.io/CytometryInR/Schedule#gating-sets">Week 5</a>.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 
 <section>
@@ -184,672 +188,881 @@ David Rach
 <section id="floreada" class="slide level2">
 <h2>Floreada</h2>
 <h3 id="loading-dataset">Loading Dataset</h3>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>First, open your web browser and navigate to the <a href="https://floreada.io/">website</a></p>
 <p>Click on Start to proceed to the next page.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/01_LandingPage.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
 
-<img data-src="images/02_InitialPage.png" class="r-stretch"><p><br></p>
-</section>
+<img data-src="images/01_LandingPage.png" class="r-stretch"></section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/02_InitialPage.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Once that is done, select the File tab on the upper navigation bar. Then click on Open File(s).</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/03_OpenFiles.png" class="quarto-figure quarto-figure-left r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/03_OpenFiles.png" class="quarto-figure quarto-figure-left r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>From there, select your .fcs files of interest, and click Open.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/04_SelectFCSFiles.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
-<p>The .fcs files will now load in, and you should see a view similar to the one below. On the left side-bar, you have your gating options (Rectangle, Polygon, Range, Elipse, Quad, etc). Next to these on the right you have the FCS files that are loaded into the workspace. Then on the right, you have the visual display for your selected specimen.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 
-<img data-src="images/05_InitialFiles.png" class="r-stretch"><p><br></p>
+<img data-src="images/04_SelectFCSFiles.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
+<p>The .fcs files will now load in, and you should see a view similar to the one below. On the left side-bar, you have your gating options (Rectangle, Polygon, Range, Elipse, Quad, etc). Next to these on the right you have the FCS files that are loaded into the workspace. Then on the right, you have the visual display for your selected specimen.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
+<section class="slide level2">
+
+
+<img data-src="images/05_InitialFiles.png" class="r-stretch"></section>
 <section class="slide level2">
 
 <h3 id="switching-axis-markers">Switching Axis Markers</h3>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>If you left click on the axis name (SSC-H or FSC-H in this case), you will be able to select other markers by which to gate your specimen. For the provided example, we were using a raw spectral flow cytometry .fcs file, so the names of the detectors are present.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/06_LeftClick.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
-<p>For now, I plan to start off by gating for singlets. I switch the y-axis to FSC-H, and then proceed to switch the x-axis to FSC-A.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 
-<img data-src="images/07_LeftClickXaxis.png" class="r-stretch"><p><br></p>
+<img data-src="images/06_LeftClick.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
+<p>For now, I plan to start off by gating for singlets. I switch the y-axis to FSC-H, and then proceed to switch the x-axis to FSC-A.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
+<section class="slide level2">
+
+
+<img data-src="images/07_LeftClickXaxis.png" class="r-stretch"></section>
 <section class="slide level2">
 
 <h3 id="creating-gates">Creating Gates</h3>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>With this done, I can now select the Poly gate tab on the upper left.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/08_PolygonGateSelect.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/08_PolygonGateSelect.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Then manually click on the locations on the plot to add the individual gate nodes.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/08_PolygonGateStart.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/08_PolygonGateStart.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>To complete the gate, I click back to the original node point. At this point, the popup will allow you to name the gate.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/08_PolygonGateCreate.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/08_PolygonGateCreate.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>To adjust the polygon gate, you can click on a node and drag it to expand or contract in a particular direction</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/08_PolygonGateNode.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
-<p>To move the entire gate, first click on a node to select the gate, then click in the center of the gate to adjust its location.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 
-<img data-src="images/08_PolygonGateCenter.png" class="r-stretch"><p><br></p>
+<img data-src="images/08_PolygonGateNode.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
+<p>To move the entire gate, first click on a node to select the gate, then click in the center of the gate to adjust its location.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
+<section class="slide level2">
+
+
+<img data-src="images/08_PolygonGateCenter.png" class="r-stretch"></section>
 <section class="slide level2">
 
 <h3 id="additional-gates">Additional Gates</h3>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Unfortunately for those with the force-of-habit from using other softwares, double-clicking within the gate doesn’t do anything. To continue gating on the selected cells, you will need to click on the newly created gate name on the left. This will result in visualizing the isolated cells.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/09_SecondLanding.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/09_SecondLanding.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Once this is done, you can repeat the previous steps to change the axis markers and create a second gate. For this example, we went with a “Cells” gate to exclude debris from this particular sample.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/09_SecondGate.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/09_SecondGate.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Having created the “Cells” gate, we will be switching gating based on FSC and SSC to using the detector parameters.</p>
 <p>The samples in this example were acquired to derive the cell counts and concentration of various cell populations within cryopreserved cord and peripheral blood mononuclear cells (CBMC and PBMC) specimens after thawing.</p>
 <p>They were stained with CD19 BV421, CD45 PE, and CD14 APC on a <a href="https://spectrum.cytekbio.com/">5-Laser Cytek Aurora</a>, before unmixing, this would correspond respectively to V1, YG1/B4, R1/YG4 peaks respectively.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-<p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
 <h3 id="scalingtransformation">Scaling/Transformation</h3>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>When we switch the axis, we can see that the scaling/transformation is not ideal, as the staining and not-staining populations are scrunched up together in the center of the plot.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/10_Untransformed.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/10_Untransformed.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>To change the scaling/transformation, we need to click directly on the axis.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/10_ClickGrid.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/10_ClickGrid.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>From there, when we click on the drop-down, we see the various transformation options. We will select <a href="https://pubmed.ncbi.nlm.nih.gov/16604519/">Logicle</a>, given we are working with spectral flow cytometry files.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/10_SelectLogicle.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/10_SelectLogicle.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>This y-axis values are subsequently visualized with the logicle transformation applied, increasing our resolution between the positive and negative population.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/10_LogicleY.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
-<p>We can then repeat this for the x-axis, adjusting the fine-tune options for the scaling as needed.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 
-<img data-src="images/10_DoubleLogicleAxis.png" class="r-stretch"><p><br></p>
+<img data-src="images/10_LogicleY.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
+<p>We can then repeat this for the x-axis, adjusting the fine-tune options for the scaling as needed.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
+<section class="slide level2">
+
+
+<img data-src="images/10_DoubleLogicleAxis.png" class="r-stretch"></section>
 <section class="slide level2">
 
 <h3 id="navigating-gating-hierarchy">Navigating Gating Hierarchy</h3>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>With this done, let’s first draw a rectangle gate for the CD45+ (B4-A) cells.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/10_CD45Gate.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/10_CD45Gate.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>And then selecting that population by clicking on the gate name, let’s proceed and gate the CD19+ cells (V2-A).</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/10_CD19Gate.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/10_CD19Gate.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>As you can see, we now have the various gates present in the gating hierarchy for the respective .fcs file. To return to a previous gated population, we would click on the parent population above it.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/11_ReturnToPrevious.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
-<p>We can subsequently add an additional gate at this gating level for the likely debris population (the threshold setting was suboptimal for this experimental run).</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 
-<img data-src="images/11_AdditionalGates.png" class="r-stretch"><p><br></p>
+<img data-src="images/11_ReturnToPrevious.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
+<p>We can subsequently add an additional gate at this gating level for the likely debris population (the threshold setting was suboptimal for this experimental run).</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
+<section class="slide level2">
+
+
+<img data-src="images/11_AdditionalGates.png" class="r-stretch"></section>
 <section class="slide level2">
 
 <h3 id="copying-gates">Copying Gates</h3>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>This was the process for gating for a single specimen. To copy gates over to the other specimens, we have two options. First, holding down your Ctrl (or equivalent) button, you can click on the individual gate names.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/11_ControlHighlight.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/11_ControlHighlight.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>From there, you can drag them down to the next specimen and apply them.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/11_ApplyToNext.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/11_ApplyToNext.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Alternatively, you can drag down the highlighted gated to the Pipelines Tab, and apply to All Files. This will result in the gates being copied to all specimens in the experiment.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/11_ApplyAllViaPipelines.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
 
-<img data-src="images/13_PipelineAdjustAll.png" class="r-stretch"><p><br></p>
-</section>
+<img data-src="images/11_ApplyAllViaPipelines.png" class="r-stretch"></section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/13_PipelineAdjustAll.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Adjustments within Pipelines will carry over to all other respective unmodified specimens that share it’s gates.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/13_PipelineAdjustCD19.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
-<p>Once this is done, I recommend cycling through the gates for each specimen, just to ensure that the gates were positioned correctly before saving the workspace.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 
-<img data-src="images/12_ClickAdjust.png" class="r-stretch"><p><br></p>
+<img data-src="images/13_PipelineAdjustCD19.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
+<p>Once this is done, I recommend cycling through the gates for each specimen, just to ensure that the gates were positioned correctly before saving the workspace.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
+<section class="slide level2">
+
+
+<img data-src="images/12_ClickAdjust.png" class="r-stretch"></section>
 <section class="slide level2">
 
 <h3 id="saving-workspace">Saving Workspace</h3>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>With everyone now “correctly” gated, we can proceed to save the workspace so that we can reopen it later from another browser.</p>
 <p>To do this we open the File tab from the upper navigation bar, and select Save Workspace.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/14_SaveWorkspace.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/14_SaveWorkspace.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>From there we have a couple options, for now let’s select Floreada Workspace. Where it is saved at will depend on your individual browser settings, so watch for a popup.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/14_FloreadaWorkspace.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/14_FloreadaWorkspace.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Alternatively (and crucially for the CytoML pipeline) we can also choose to save it as a FlowJo v10 .wsp file.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/14_FlowJoWorkspace.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
-<p>In both cases, you will end up with Workspace files that can be used later to access your created gates</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 
-<img data-src="images/WorkspaceFiles.png" class="r-stretch"><p><br></p>
+<img data-src="images/14_FlowJoWorkspace.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
+<p>In both cases, you will end up with Workspace files that can be used later to access your created gates</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
+<section class="slide level2">
+
+
+<img data-src="images/WorkspaceFiles.png" class="r-stretch"></section>
 <section class="slide level2">
 
 <h3 id="reopening-workspace">Reopening Workspace</h3>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>To reopen the Floreada workspace within the browser, reopen the website, and select the Open File(s) option.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/15_Reopening.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/15_Reopening.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>From there, select both the Floreada Workspace file as well as the .fcs files</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/15_ReopeningSelectAll.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
-<p>At which point you will now be back to the point you last saved at.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 
-<img data-src="images/15_ReopenedWorkspace.png" class="r-stretch"><p><br></p>
+<img data-src="images/15_ReopeningSelectAll.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
+<p>At which point you will now be back to the point you last saved at.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
+<section class="slide level2">
+
+
+<img data-src="images/15_ReopenedWorkspace.png" class="r-stretch"></section>
 <section id="cytoml" class="slide level2">
 <h2>CytoML</h2>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Due to a unknown formatting bug, the Floreada produced FlowJo v10 .wsp is not directly accessible by CytoML at the time of this course. However, the issue is resolved as soon as the file is opened the first time within FlowJo v10, regardless of whether you have a log in or not. Strange? Yes, but we will take the workaround.</p>
 <p>So, for anyone on Windows or MacOS, download <a href="https://www.flowjo.com/flowjo10/overview">FlowJo v10</a>. Once installed, open the software, and close the login popups. Once there, open the Floreada created FlowJo.wsp file. Since you haven’t logged in, it won’t show any events. But it will correct the formatting bug. Close the software, and return to R. Your Floreada sourced .WSP file should now be readable by CytoML.</p>
 <p>Odd? For sure. Fixable? Likely, I will set a reminder to work with the Floreada and CytoML devs to see if we can cut out the need for this workaround.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section></section>
 <section id="wrap-up" class="title-slide slide level1 center">
 <h1>Wrap-up</h1>

@@ -103,42 +103,42 @@
     "href": "course/00_WorkstationSetup/MacOSSlides.html#installing-r",
     "title": "Installing Software on MacOS",
     "section": "Installing R",
-    "text": "Installing R\n\nTo get started, first navigate to the R website. Once there, click on Download R option towards the top of the page."
+    "text": "Installing R\n\n\n\n\n\n\n\n\n.\n\n\nTo get started, first navigate to the R website. Once there, click on Download R option towards the top of the page."
   },
   {
     "objectID": "course/00_WorkstationSetup/MacOSSlides.html#xcode-command-line-tools",
     "href": "course/00_WorkstationSetup/MacOSSlides.html#xcode-command-line-tools",
     "title": "Installing Software on MacOS",
     "section": "Xcode Command Line Tools",
-    "text": "Xcode Command Line Tools\n\nDepending on your version of macOS, you may or may not already have Git installed on your computer. The reason is that it comes bundled within the Xcode Command Line Tools.\nIf this is not your first foray into coding, you may have previously seen an installation pop-up along the lines of “XYZ requires command line developer tools. Would you like to install the tools now?” when installing an IDE (like Positron, Rstudio or Visual Studio Code)."
+    "text": "Xcode Command Line Tools\n\n\n\n\n\n\n\n\n.\n\n\nDepending on your version of macOS, you may or may not already have Git installed on your computer. The reason is that it comes bundled within the Xcode Command Line Tools.\nIf this is not your first foray into coding, you may have previously seen an installation pop-up along the lines of “XYZ requires command line developer tools. Would you like to install the tools now?” when installing an IDE (like Positron, Rstudio or Visual Studio Code)."
   },
   {
     "objectID": "course/00_WorkstationSetup/MacOSSlides.html#install-positron",
     "href": "course/00_WorkstationSetup/MacOSSlides.html#install-positron",
     "title": "Installing Software on MacOS",
     "section": "Install Positron",
-    "text": "Install Positron\n\nFinally, you will install Positron. It is an integrated development environment (IDE) in which we will open, modify and run our code throughout the course.\nFirst, navigate to their homepage, and select the blue Download option button on the upper-right."
+    "text": "Install Positron\n\n\n\n\n\n\n\n\n.\n\n\nFinally, you will install Positron. It is an integrated development environment (IDE) in which we will open, modify and run our code throughout the course.\nFirst, navigate to their homepage, and select the blue Download option button on the upper-right."
   },
   {
     "objectID": "course/00_WorkstationSetup/LinuxSlides.html#debian-based-distros",
     "href": "course/00_WorkstationSetup/LinuxSlides.html#debian-based-distros",
     "title": "Installing Software on Linux",
     "section": "Debian-based Distros",
-    "text": "Debian-based Distros\nInstalling R\n\nTo get started, first navigate to the R website. Once there, click on Download R option towards the top of the page."
+    "text": "Debian-based Distros\nInstalling R\n\n\n\n\n\n\n\n\n.\n\n\nTo get started, first navigate to the R website. Once there, click on Download R option towards the top of the page."
   },
   {
     "objectID": "course/00_WorkstationSetup/LinuxSlides.html#installing-git",
     "href": "course/00_WorkstationSetup/LinuxSlides.html#installing-git",
     "title": "Installing Software on Linux",
     "section": "Installing Git",
-    "text": "Installing Git"
+    "text": "Installing Git\n\n# sudo apt install git"
   },
   {
     "objectID": "course/00_WorkstationSetup/LinuxSlides.html#installing-positron",
     "href": "course/00_WorkstationSetup/LinuxSlides.html#installing-positron",
     "title": "Installing Software on Linux",
     "section": "Installing Positron",
-    "text": "Installing Positron\n\nFinally, you will need to install Positron. It will be the integrated development environment (IDE) we will be using for the course.\nFirst, navigate to their homepage, and select the blue Download option button on the upper-right."
+    "text": "Installing Positron\n\n\n\n\n\n\n\n\n.\n\n\nFinally, you will need to install Positron. It will be the integrated development environment (IDE) we will be using for the course.\nFirst, navigate to their homepage, and select the blue Download option button on the upper-right."
   },
   {
     "objectID": "course/00_WorkstationSetup/Linux.html",
@@ -173,147 +173,147 @@
     "href": "course/00_WorkstationSetup/WindowsSlides.html#installing-r",
     "title": "Installing Software on Windows",
     "section": "Installing R",
-    "text": "Installing R\n\nTo get started, first navigate to the R website. Once there, click on Download R option towards the top of the page."
+    "text": "Installing R\n\n\n\n\n\n\n\n\n.\n\n\nTo get started, first navigate to the R website. Once there, click on Download R option towards the top of the page."
   },
   {
     "objectID": "course/00_WorkstationSetup/WindowsSlides.html#installing-rtools",
     "href": "course/00_WorkstationSetup/WindowsSlides.html#installing-rtools",
     "title": "Installing Software on Windows",
     "section": "Installing RTools",
-    "text": "Installing RTools\n\nWe will now work on installing Rtools. This software is needed when building R packages from source, which we will need throughout the course for R packages hosted on GitHub.\nTo get started, we will return to the R installation page we visited previously and instead click on the Rtools option."
+    "text": "Installing RTools\n\n\n\n\n\n\n\n\n.\n\n\nWe will now work on installing Rtools. This software is needed when building R packages from source, which we will need throughout the course for R packages hosted on GitHub.\nTo get started, we will return to the R installation page we visited previously and instead click on the Rtools option."
   },
   {
     "objectID": "course/00_WorkstationSetup/WindowsSlides.html#installing-git",
     "href": "course/00_WorkstationSetup/WindowsSlides.html#installing-git",
     "title": "Installing Software on Windows",
     "section": "Installing Git",
-    "text": "Installing Git\n\nGit is a version control software widely used among software developers and bioinformaticians. We will use it extensively throughout the course, both locally on our computers (to keep track of changes to our files), as well as in combination with GitHub(to maintain online backups of our files).\nWe will first navigate to the website and select the download from Windows option."
+    "text": "Installing Git\n\n\n\n\n\n\n\n\n.\n\n\nGit is a version control software widely used among software developers and bioinformaticians. We will use it extensively throughout the course, both locally on our computers (to keep track of changes to our files), as well as in combination with GitHub(to maintain online backups of our files).\nWe will first navigate to the website and select the download from Windows option."
   },
   {
     "objectID": "course/00_WorkstationSetup/WindowsSlides.html#installing-positron",
     "href": "course/00_WorkstationSetup/WindowsSlides.html#installing-positron",
     "title": "Installing Software on Windows",
     "section": "Installing Positron",
-    "text": "Installing Positron\n\nFinally, you will install Positron. It is an integrated development environment (IDE) in which we will open, modify and run our code throughout the course.\nFirst, navigate to their homepage, and select the blue Download option button on the upper-right."
+    "text": "Installing Positron\n\n\n\n\n\n\n\n\n.\n\n\nFinally, you will install Positron. It is an integrated development environment (IDE) in which we will open, modify and run our code throughout the course.\nFirst, navigate to their homepage, and select the blue Download option button on the upper-right."
   },
   {
     "objectID": "course/00_Quarto/slides.html#renderpreview",
     "href": "course/00_Quarto/slides.html#renderpreview",
     "title": "Introduction to Quarto",
     "section": "Render/Preview",
-    "text": "Render/Preview\n\nThe preview button, at the upper-left end of the Editor, is used to render/knit a quarto document. This triggers the process by which code-chunks are run, and then the outputs are cobbled together into the file format type designated by the YAML header."
+    "text": "Render/Preview\n\n\n\n\n\n\n\n\n.\n\n\nThe preview button, at the upper-left end of the Editor, is used to render/knit a quarto document. This triggers the process by which code-chunks are run, and then the outputs are cobbled together into the file format type designated by the YAML header."
   },
   {
     "objectID": "course/00_Quarto/slides.html#yaml",
     "href": "course/00_Quarto/slides.html#yaml",
     "title": "Introduction to Quarto",
     "section": "YAML",
-    "text": "YAML\n\nWe can additionally provide additional custom inputs to the YAML header. A couple examples include providing the document author and date."
+    "text": "YAML\n\n\n\n\n\n\n\n\n.\n\n\nWe can additionally provide additional custom inputs to the YAML header. A couple examples include providing the document author and date."
   },
   {
     "objectID": "course/00_Quarto/slides.html#table-of-contents",
     "href": "course/00_Quarto/slides.html#table-of-contents",
     "title": "Introduction to Quarto",
     "section": "Table of Contents",
-    "text": "Table of Contents\n\nIn the previous section, we saw that we could provide headings and subheadings to our .qmd file by placing a # at the start of a line in the text portion of the document. A subheading was designated by a ##, with additional hierarchy being designated by appending an additional #."
+    "text": "Table of Contents\n\n\n\n\n\n\n\n\n.\n\n\nIn the previous section, we saw that we could provide headings and subheadings to our .qmd file by placing a # at the start of a line in the text portion of the document. A subheading was designated by a ##, with additional hierarchy being designated by appending an additional #."
   },
   {
     "objectID": "course/00_Quarto/slides.html#code-chunk-arguments",
     "href": "course/00_Quarto/slides.html#code-chunk-arguments",
     "title": "Introduction to Quarto",
     "section": "Code Chunk Arguments",
-    "text": "Code Chunk Arguments\n\nAs we briefly touched on in the last section, code-chunks can be modified by including arguments, which affect whether a particular code chunk gets evaluated. In that example, we included a “#| eval: FALSE” to the install commands since we did not want them to be re-run subsequently. We will take a closer look at the other arguments in this section.\n\nEval\n\nThe code-chunk argument, “Eval”, is used to determine when a code-chunk get’s evaluated. When set to true (or by default if no eval argument is included), the code-chunks contents will be run/executed, and the output will appear. We can see this in the html output, as below the code block, we get back the address of my working directory."
+    "text": "Code Chunk Arguments\n\n\n\n\n\n\n\n\n.\n\n\nAs we briefly touched on in the last section, code-chunks can be modified by including arguments, which affect whether a particular code chunk gets evaluated. In that example, we included a “#| eval: FALSE” to the install commands since we did not want them to be re-run subsequently. We will take a closer look at the other arguments in this section.\n\n\n\n\n\nEval\n\n\n\n\n\n\n\n\n.\n\n\nThe code-chunk argument, “Eval”, is used to determine when a code-chunk get’s evaluated. When set to true (or by default if no eval argument is included), the code-chunks contents will be run/executed, and the output will appear. We can see this in the html output, as below the code block, we get back the address of my working directory."
   },
   {
     "objectID": "course/00_Quarto/slides.html#text-styles",
     "href": "course/00_Quarto/slides.html#text-styles",
     "title": "Introduction to Quarto",
     "section": "Text Styles",
-    "text": "Text Styles\n\nQuarto primarily uses Markdown for text styling. Consequently, markdown arguments can be used within the text to change how various text appears."
+    "text": "Text Styles\n\n\n\n\n\n\n\n\n.\n\n\nQuarto primarily uses Markdown for text styling. Consequently, markdown arguments can be used within the text to change how various text appears."
   },
   {
     "objectID": "course/00_Quarto/slides.html#hyperlinks",
     "href": "course/00_Quarto/slides.html#hyperlinks",
     "title": "Introduction to Quarto",
     "section": "Hyperlinks",
-    "text": "Hyperlinks\n\nYou can link to a website by surrounding word of interest in [] and placing the url within () adjacent to it."
+    "text": "Hyperlinks\n\n\n\n\n\n\n\n\n.\n\n\nYou can link to a website by surrounding word of interest in [] and placing the url within () adjacent to it."
   },
   {
     "objectID": "course/00_Quarto/slides.html#images",
     "href": "course/00_Quarto/slides.html#images",
     "title": "Introduction to Quarto",
     "section": "Images",
-    "text": "Images\n\nYou can place images by adding the following, as long as the file.path to the image is correctly formatted. In my case, this is why I include images folders within my folders to simplify the copy and paste."
+    "text": "Images\n\n\n\n\n\n\n\n\n.\n\n\nYou can place images by adding the following, as long as the file.path to the image is correctly formatted. In my case, this is why I include images folders within my folders to simplify the copy and paste."
   },
   {
     "objectID": "course/00_Positron/slides.html#console",
     "href": "course/00_Positron/slides.html#console",
     "title": "Using Positron",
     "section": "Console",
-    "text": "Console\n\nAt the bottom of the sceen, you will first see the Console Tab. This is the tab where your lines of code when executed (run) will appear, as well as any messages, warnings or errors that get returned. On the right side of the console, you can find several buttons, among them restart R and delete session (for when you need a fresh start), and clear console (which keeps all previously run outputs and objects, but clears away the displayed text within the console)."
+    "text": "Console\n\n\n\n\n\n\n\n\n.\n\n\nAt the bottom of the sceen, you will first see the Console Tab. This is the tab where your lines of code when executed (run) will appear, as well as any messages, warnings or errors that get returned. On the right side of the console, you can find several buttons, among them restart R and delete session (for when you need a fresh start), and clear console (which keeps all previously run outputs and objects, but clears away the displayed text within the console)."
   },
   {
     "objectID": "course/00_Positron/slides.html#terminal",
     "href": "course/00_Positron/slides.html#terminal",
     "title": "Using Positron",
     "section": "Terminal",
-    "text": "Terminal\n\nRight next to the Console tab is your Terminal tab. While the console tab is primarily used to run R code within Positron, the terminal is the interface where code containing system commands directed at at your computer is entered. We will use this less frequently, primarily in two context: 1) rendering Quarto documents, and 2) commiting changes to version control. Among the buttons on the right-side of the terminal to make note of are the + button to add a new terminal, and the trash/garbage can button to kill (stop) the terminal."
+    "text": "Terminal\n\n\n\n\n\n\n\n\n.\n\n\nRight next to the Console tab is your Terminal tab. While the console tab is primarily used to run R code within Positron, the terminal is the interface where code containing system commands directed at at your computer is entered. We will use this less frequently, primarily in two context: 1) rendering Quarto documents, and 2) commiting changes to version control. Among the buttons on the right-side of the terminal to make note of are the + button to add a new terminal, and the trash/garbage can button to kill (stop) the terminal."
   },
   {
     "objectID": "course/00_Positron/slides.html#help",
     "href": "course/00_Positron/slides.html#help",
     "title": "Using Positron",
     "section": "Help",
-    "text": "Help\n\nWhen trying to evaluate how a particular function is working in R, you can hover over it and positron will open up the documentation for that particular function if available, alternatively, you can enter ?theParticularFunctionsName in the console and hit enter to similarly view what is occuring."
+    "text": "Help\n\n\n\n\n\n\n\n\n.\n\n\nWhen trying to evaluate how a particular function is working in R, you can hover over it and positron will open up the documentation for that particular function if available, alternatively, you can enter ?theParticularFunctionsName in the console and hit enter to similarly view what is occuring."
   },
   {
     "objectID": "course/00_Positron/slides.html#variables",
     "href": "course/00_Positron/slides.html#variables",
     "title": "Using Positron",
     "section": "Variables",
-    "text": "Variables\n\nOn the upper-portion of the Secondary Side Bar, we can find the Session window, containing the Variables tab. As you run (execute) lines of code, and different variables, objects and functions are created, these become visible under the variables tab on the upper right."
+    "text": "Variables\n\n\n\n\n\n\n\n\n.\n\n\nOn the upper-portion of the Secondary Side Bar, we can find the Session window, containing the Variables tab. As you run (execute) lines of code, and different variables, objects and functions are created, these become visible under the variables tab on the upper right."
   },
   {
     "objectID": "course/00_Positron/slides.html#plots",
     "href": "course/00_Positron/slides.html#plots",
     "title": "Using Positron",
     "section": "Plots",
-    "text": "Plots\n\nSimilarly, any generated Plots or Documents will appear within the Secondary Side Bar, either under Plots (bottom) or Viewer (top) tabs."
+    "text": "Plots\n\n\n\n\n\n\n\n\n.\n\n\nSimilarly, any generated Plots or Documents will appear within the Secondary Side Bar, either under Plots (bottom) or Viewer (top) tabs."
   },
   {
     "objectID": "course/00_Positron/slides.html#view",
     "href": "course/00_Positron/slides.html#view",
     "title": "Using Positron",
     "section": "View",
-    "text": "View\n\nOn the upper bar multiple tabs can be found, which we will explore in due time. Most useful to point out is the View tab. If you accidentally close your console, session or plots window, and are trying to get them to reapper, you would need to reselect them from this tab."
+    "text": "View\n\n\n\n\n\n\n\n\n.\n\n\nOn the upper bar multiple tabs can be found, which we will explore in due time. Most useful to point out is the View tab. If you accidentally close your console, session or plots window, and are trying to get them to reapper, you would need to reselect them from this tab."
   },
   {
     "objectID": "course/00_Positron/slides.html#pages",
     "href": "course/00_Positron/slides.html#pages",
     "title": "Using Positron",
     "section": "Pages",
-    "text": "Pages\n\nThe pages tab and the left-side bar show you everything that is currently within your project folder, including all the folders, and files. Once version control with Git is initiated, new files are relected showing up as green text and a dot, while modified tracked files are reflected by light brown text and a dot."
+    "text": "Pages\n\n\n\n\n\n\n\n\n.\n\n\nThe pages tab and the left-side bar show you everything that is currently within your project folder, including all the folders, and files. Once version control with Git is initiated, new files are relected showing up as green text and a dot, while modified tracked files are reflected by light brown text and a dot."
   },
   {
     "objectID": "course/00_Positron/slides.html#search",
     "href": "course/00_Positron/slides.html#search",
     "title": "Using Positron",
     "section": "Search",
-    "text": "Search\n\nThe search tab on the left side bar is something that I use routinely."
+    "text": "Search\n\n\n\n\n\n\n\n\n.\n\n\nThe search tab on the left side bar is something that I use routinely."
   },
   {
     "objectID": "course/00_Positron/slides.html#extensions",
     "href": "course/00_Positron/slides.html#extensions",
     "title": "Using Positron",
     "section": "Extensions",
-    "text": "Extensions\n\nOn the far-left side we can find the Activity bar, which contains several tabs. Which tab you have selected will then dictate the contents of your left side-bar.\nOccupying the left side bar are several tabs. One of these is Extensions, which shows “Plugins” (or the VScode equivalent) that extend the functionality of Positron further. The ones you have installed may vary, but the main ones in context of this course are Air (provides color and highlights syntax for R code to make interpretation easier) as well as Quarto (for rendering the various document types)."
+    "text": "Extensions\n\n\n\n\n\n\n\n\n.\n\n\nOn the far-left side we can find the Activity bar, which contains several tabs. Which tab you have selected will then dictate the contents of your left side-bar.\nOccupying the left side bar are several tabs. One of these is Extensions, which shows “Plugins” (or the VScode equivalent) that extend the functionality of Positron further. The ones you have installed may vary, but the main ones in context of this course are Air (provides color and highlights syntax for R code to make interpretation easier) as well as Quarto (for rendering the various document types)."
   },
   {
     "objectID": "course/00_Positron/slides.html#git",
     "href": "course/00_Positron/slides.html#git",
     "title": "Using Positron",
     "section": "Git",
-    "text": "Git\n\nThe Git tab on the left side bar is where once version control is initiated for the project folder, we can see changes that have occurred to the individual files since the last commit. These changes can be added to a new commit by clicking on the + sign. This will be covered more extensively in the next section"
+    "text": "Git\n\n\n\n\n\n\n\n\n.\n\n\nThe Git tab on the left side bar is where once version control is initiated for the project folder, we can see changes that have occurred to the individual files since the last commit. These changes can be added to a new commit by clicking on the + sign. This will be covered more extensively in the next section"
   },
   {
     "objectID": "course/00_GitHub/index.html",
@@ -565,91 +565,91 @@
     "href": "course/00_Floreada/slides.html#floreada",
     "title": "Using Floreada",
     "section": "Floreada",
-    "text": "Floreada\nLoading Dataset\n\nFirst, open your web browser and navigate to the website\nClick on Start to proceed to the next page."
+    "text": "Floreada\nLoading Dataset\n\n\n\n\n\n\n\n\n.\n\n\nFirst, open your web browser and navigate to the website\nClick on Start to proceed to the next page."
   },
   {
     "objectID": "course/00_Floreada/slides.html#cytoml",
     "href": "course/00_Floreada/slides.html#cytoml",
     "title": "Using Floreada",
     "section": "CytoML",
-    "text": "CytoML\n\nDue to a unknown formatting bug, the Floreada produced FlowJo v10 .wsp is not directly accessible by CytoML at the time of this course. However, the issue is resolved as soon as the file is opened the first time within FlowJo v10, regardless of whether you have a log in or not. Strange? Yes, but we will take the workaround.\nSo, for anyone on Windows or MacOS, download FlowJo v10. Once installed, open the software, and close the login popups. Once there, open the Floreada created FlowJo.wsp file. Since you haven’t logged in, it won’t show any events. But it will correct the formatting bug. Close the software, and return to R. Your Floreada sourced .WSP file should now be readable by CytoML.\nOdd? For sure. Fixable? Likely, I will set a reminder to work with the Floreada and CytoML devs to see if we can cut out the need for this workaround."
+    "text": "CytoML\n\n\n\n\n\n\n\n\n.\n\n\nDue to a unknown formatting bug, the Floreada produced FlowJo v10 .wsp is not directly accessible by CytoML at the time of this course. However, the issue is resolved as soon as the file is opened the first time within FlowJo v10, regardless of whether you have a log in or not. Strange? Yes, but we will take the workaround.\nSo, for anyone on Windows or MacOS, download FlowJo v10. Once installed, open the software, and close the login popups. Once there, open the Floreada created FlowJo.wsp file. Since you haven’t logged in, it won’t show any events. But it will correct the formatting bug. Close the software, and return to R. Your Floreada sourced .WSP file should now be readable by CytoML.\nOdd? For sure. Fixable? Likely, I will set a reminder to work with the Floreada and CytoML devs to see if we can cut out the need for this workaround."
   },
   {
     "objectID": "course/00_Git/slides.html#new-folder-from-template",
     "href": "course/00_Git/slides.html#new-folder-from-template",
     "title": "Version Control with Git",
     "section": "New Folder from Template",
-    "text": "New Folder from Template\n\nSince Positron can use multiple programming languages, when we select “New Folder from Template” we will be asked what kind of folder template we want to use. Since we are working in R, we will select the “R Project” option."
+    "text": "New Folder from Template\n\n\n\n\n\n\n\n\n.\n\n\nSince Positron can use multiple programming languages, when we select “New Folder from Template” we will be asked what kind of folder template we want to use. Since we are working in R, we will select the “R Project” option."
   },
   {
     "objectID": "course/00_Git/slides.html#creating-subfolders",
     "href": "course/00_Git/slides.html#creating-subfolders",
     "title": "Version Control with Git",
     "section": "Creating SubFolders",
-    "text": "Creating SubFolders\n\nOnce your new project folder has opened, you should be seeing the main layout elements that we briefly covered in the Positron walk-through.\nFor this section, we will primarily be focused on what is happening within the primary side bar on the left, where changes to the individual files within the folder since the last save/commit will be reflected by colored text.\nFor my own projects, there are some elements of organization that I go ahead and add for each new folder. These include both a data and an images subfolders to help keep things a little more organized.\nTo create these folders, we would click on the respective add folder (+) button on the side bar. Files and Folders can be clicked and dragged within the primary side bar to move things to new folder locations."
+    "text": "Creating SubFolders\n\n\n\n\n\n\n\n\n.\n\n\nOnce your new project folder has opened, you should be seeing the main layout elements that we briefly covered in the Positron walk-through.\nFor this section, we will primarily be focused on what is happening within the primary side bar on the left, where changes to the individual files within the folder since the last save/commit will be reflected by colored text.\nFor my own projects, there are some elements of organization that I go ahead and add for each new folder. These include both a data and an images subfolders to help keep things a little more organized.\nTo create these folders, we would click on the respective add folder (+) button on the side bar. Files and Folders can be clicked and dragged within the primary side bar to move things to new folder locations."
   },
   {
     "objectID": "course/00_Git/slides.html#creating-files",
     "href": "course/00_Git/slides.html#creating-files",
     "title": "Version Control with Git",
     "section": "Creating Files",
-    "text": "Creating Files\n\nIn context of this course, we will primarily be working with two types of files when coding:\n\nR Scripts: These files end in .R. These contain only code (with occasional # comment line). These are often used for self-contained code that once we get them working we rarely need to modify.\nQuarto Markdowns: These files end in .qmd. They contain a .yaml header, followed by a mix of regular written text (often explanations or other documentation), and sections (ie. chunks) that contain code. These are used when we are still getting the code to work, when we need to modify inputs frequently, or simply when we need to document what and why we are doing something to make life easier for our future-self two months from now."
+    "text": "Creating Files\n\n\n\n\n\n\n\n\n.\n\n\nIn context of this course, we will primarily be working with two types of files when coding:\n\nR Scripts: These files end in .R. These contain only code (with occasional # comment line). These are often used for self-contained code that once we get them working we rarely need to modify.\nQuarto Markdowns: These files end in .qmd. They contain a .yaml header, followed by a mix of regular written text (often explanations or other documentation), and sections (ie. chunks) that contain code. These are used when we are still getting the code to work, when we need to modify inputs frequently, or simply when we need to document what and why we are doing something to make life easier for our future-self two months from now."
   },
   {
     "objectID": "course/00_Git/slides.html#qmd-files",
     "href": "course/00_Git/slides.html#qmd-files",
     "title": "Version Control with Git",
     "section": "QMD Files",
-    "text": "QMD Files\n\nOnce this is done, we can now see we have a new .qmd file (“Example.qmd” in this case).\n\nYAML\n\nAs previously mentioned, the start of a Quarto Markdown file containg a YAML code chunk that is used to set formatting choices (we will explore this in-depth during the next section)\nWhat designates the location of the YAML block are three hyphens at the start, and three hyphens at the end. For this example, we will also provide a “title:” and “format:” field for the time being (see additional options here)."
+    "text": "QMD Files\n\n\n\n\n\n\n\n\n.\n\n\nOnce this is done, we can now see we have a new .qmd file (“Example.qmd” in this case).\n\n\n\n\n\nYAML\n\n\n\n\n\n\n\n\n.\n\n\nAs previously mentioned, the start of a Quarto Markdown file containg a YAML code chunk that is used to set formatting choices (we will explore this in-depth during the next section)\nWhat designates the location of the YAML block are three hyphens at the start, and three hyphens at the end. For this example, we will also provide a “title:” and “format:” field for the time being (see additional options here)."
   },
   {
     "objectID": "course/00_Git/slides.html#local-version-control",
     "href": "course/00_Git/slides.html#local-version-control",
     "title": "Version Control with Git",
     "section": "Local Version Control",
-    "text": "Local Version Control\n\nHaving introduced the main elements of a Quarto Markdown file, let’s turn our attention to the tab within the editor showing our newly created .qmd file.\nWe can see there is a solid circle next to the file name, and it is appearing as green. The circle denotes unsaved changes, which we can correct by clicking on the Save Button to save the changes to our file."
+    "text": "Local Version Control\n\n\n\n\n\n\n\n\n.\n\n\nHaving introduced the main elements of a Quarto Markdown file, let’s turn our attention to the tab within the editor showing our newly created .qmd file.\nWe can see there is a solid circle next to the file name, and it is appearing as green. The circle denotes unsaved changes, which we can correct by clicking on the Save Button to save the changes to our file."
   },
   {
     "objectID": "course/00_Git/slides.html#remote-version-control",
     "href": "course/00_Git/slides.html#remote-version-control",
     "title": "Version Control with Git",
     "section": "Remote Version Control",
-    "text": "Remote Version Control\nCopying Project Folder to GitHub\n\nWhile having local version control in place is helpful when you need to revert back after encountering issues, where Git shines is the ability to pass your changes to your online GitHub repository.\nNot only does this allow you to switch between computers, but should something disastrous happen to your main computer, you still have all your hard work backed up and readily assessible.\nFor this subsection, first, double check that Positron is still connected to your GitHub account by checking the user tab on the bottom-left. If not, repeat the connection setup."
+    "text": "Remote Version Control\nCopying Project Folder to GitHub\n\n\n\n\n\n\n\n\n.\n\n\nWhile having local version control in place is helpful when you need to revert back after encountering issues, where Git shines is the ability to pass your changes to your online GitHub repository.\nNot only does this allow you to switch between computers, but should something disastrous happen to your main computer, you still have all your hard work backed up and readily assessible.\nFor this subsection, first, double check that Positron is still connected to your GitHub account by checking the user tab on the bottom-left. If not, repeat the connection setup."
   },
   {
     "objectID": "course/00_GitHub/slides.html#creating-an-account",
     "href": "course/00_GitHub/slides.html#creating-an-account",
     "title": "Using GitHub",
     "section": "Creating an Account",
-    "text": "Creating an Account\n\nWe will first navigate to the GitHub homepage. If you haven’t previously created an account, click on the button to sign up for an account."
+    "text": "Creating an Account\n\n\n\n\n\n\n\n\n.\n\n\nWe will first navigate to the GitHub homepage. If you haven’t previously created an account, click on the button to sign up for an account."
   },
   {
     "objectID": "course/00_GitHub/slides.html#github-profile",
     "href": "course/00_GitHub/slides.html#github-profile",
     "title": "Using GitHub",
     "section": "GitHub Profile",
-    "text": "GitHub Profile\n\nUpon creating a brand new account, your GitHub homepage will initially look rather empty, and can be intimidating to navigate for the first time.\nFor now, on the upper right, go ahead and click on the default profile picture icon…"
+    "text": "GitHub Profile\n\n\n\n\n\n\n\n\n.\n\n\nUpon creating a brand new account, your GitHub homepage will initially look rather empty, and can be intimidating to navigate for the first time.\nFor now, on the upper right, go ahead and click on the default profile picture icon…"
   },
   {
     "objectID": "course/00_GitHub/slides.html#github-readme",
     "href": "course/00_GitHub/slides.html#github-readme",
     "title": "Using GitHub",
     "section": "GitHub ReadMe",
-    "text": "GitHub ReadMe\n\nWith this done, we modify your GitHub profile by adding one customized element, a ReadMe page. This will be used for a couple projects during the course, and can be personalized further in the future.\nTo create a ReadMe page for your profile, we will navigate to the upper right of the screen and click on the + sign."
+    "text": "GitHub ReadMe\n\n\n\n\n\n\n\n\n.\n\n\nWith this done, we modify your GitHub profile by adding one customized element, a ReadMe page. This will be used for a couple projects during the course, and can be personalized further in the future.\nTo create a ReadMe page for your profile, we will navigate to the upper right of the screen and click on the + sign."
   },
   {
     "objectID": "course/00_GitHub/slides.html#github-repository",
     "href": "course/00_GitHub/slides.html#github-repository",
     "title": "Using GitHub",
     "section": "GitHub Repository",
-    "text": "GitHub Repository\n\nHaving set up your GitHub profile, it now is time to make sure you have access to our course materials. We will have you navigate to our course’s GitHub profile\nOn the profile page, you will be able to see our version of the README, our repositories, and the Contributions graph and Contribution activity sections.\nPlease click on the CytometryInR to navigate to its repository (folder)"
+    "text": "GitHub Repository\n\n\n\n\n\n\n\n\n.\n\n\nHaving set up your GitHub profile, it now is time to make sure you have access to our course materials. We will have you navigate to our course’s GitHub profile\nOn the profile page, you will be able to see our version of the README, our repositories, and the Contributions graph and Contribution activity sections.\nPlease click on the CytometryInR to navigate to its repository (folder)"
   },
   {
     "objectID": "course/00_GitHub/slides.html#forking-cytometryinr",
     "href": "course/00_GitHub/slides.html#forking-cytometryinr",
     "title": "Using GitHub",
     "section": "Forking CytometryInR",
-    "text": "Forking CytometryInR\n\nBefore we go further, we will need you to make your own copy of the course repository (ie. fork it). This will allow you to quickly retrieve all the new materials and code corrections by simply rereshing (ie. syncing) your forked version with our upstream parent branch once a week."
+    "text": "Forking CytometryInR\n\n\n\n\n\n\n\n\n.\n\n\nBefore we go further, we will need you to make your own copy of the course repository (ie. fork it). This will allow you to quickly retrieve all the new materials and code corrections by simply rereshing (ie. syncing) your forked version with our upstream parent branch once a week."
   },
   {
     "objectID": "course/00_Homeworks/index.html#discussions-forum",
