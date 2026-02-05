@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.7.32">
 
   <meta name="author" content="David Rach">
-  <meta name="dcterms.date" content="2026-01-21">
+  <meta name="dcterms.date" content="2026-02-01">
   <title>Cytometry in R – Installing Software on Linux</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -29,6 +29,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-f563837468303362081e247dddd440d0.css">
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-LZ35J3XE4D"></script>
@@ -147,7 +213,7 @@ David Rach
 </div>
 </div>
 
-  <p class="date">2026-01-21</p>
+  <p class="date">2026-02-01</p>
 </section>
 <section class="slide level2">
 
@@ -156,21 +222,24 @@ David Rach
 <div style="text-align: right;">
 <p><a href="https://www.gnu.org/licenses/agpl-3.0.en.html"><img data-src="https://img.shields.io/badge/license-AGPLv3-blue.png" alt="AGPL-3.0"></a> <a href="http://creativecommons.org/licenses/by-sa/4.0/"><img data-src="https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg" alt="CC BY-SA 4.0"></a></p>
 </div>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>This is the software installation walkthrough for those whose computers are running Linux. First off, welcome! Based on our pre-course interest form, there was a suprising number of you daily-drivers out there! However, a CytometryInR interest form is unlikely to be representative of the general population, so please stash all Year of the Linux desktop banners until further notice.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+</div>
+</div>
+</div>
+</div>
+</div>
 <p><img data-src="../../course/00_WorkstationSetup/images/ComputerOS.png" style="width:100.0%"></p>
-<p><br></p>
 </section>
 <section class="slide level2">
 
@@ -178,22 +247,25 @@ David Rach
 <section>
 <section id="background" class="title-slide slide level1 center">
 <h1>Background</h1>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>If you are daily-driving Linux, you are likely not a stranger to the process of getting software installed on your particular distribution.</p>
 <p>When it comes to installing <a href="https://www.r-project.org/">R website</a>, the R project supports packaging formats for both Debian (including Ubuntu, Linux Mint, etc) and RHEL (including Fedora) based-distributions. The supported branch for SUSE has not been active since 2012. This is similarly the case when installing <a href="https://positron.posit.co/">Positron</a>. Depending on your distribution, you might also need to install <a href="https://git-scm.com/">Git</a> via your package manager.</p>
 <p>I daily-drive Debian stable (Trixie), so this walk-through documents the installation process for the Debian branch. I plan to circle back with a Fedora version, but if that doesn’t occur by the publishing time, I refer you to the R for Linux <a href="https://cran.r-project.org/bin/linux/fedora/#fedora">documentation</a> to help get you started.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-<p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
@@ -206,738 +278,967 @@ David Rach
 <section id="debian-based-distros" class="slide level2">
 <h2>Debian-based Distros</h2>
 <h3 id="installing-r">Installing R</h3>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>To get started, first navigate to the <a href="https://www.r-project.org/">R website</a>. Once there, click on <a href="https://cran.r-project.org/mirrors.html">Download R</a> option towards the top of the page.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/Linux/01_RLanding.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/Linux/01_RLanding.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>On the next screen, you will need to select a mirror from which to download the software from. You can either select the closest geographic location (which may be faster) or alternatively just select the <a href="https://cloud.r-project.org/">Cloud</a> option which should redirect you.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/Linux/02_Mirror.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/Linux/02_Mirror.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Once this is done, select your Linux Distro (or one that shares your package managers format).</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/Linux/03_Debian.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/Linux/03_Debian.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>On the landing page, you will find a bunch of relevant installation information, which is worthwhile giving a read-through when you have time.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/Linux/04_Landing.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/Linux/04_Landing.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>The process to successfully install R can be summarized as follows:</p>
 <p>Update apt/sources.list to include the CRAN repository (allowing access to R packages)</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/Linux/08_AptSources.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/Linux/08_AptSources.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Since we are running on Debian stable (Trixie), we would add the following line to sources.list</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/Linux/07_TrixieRepo.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/Linux/07_TrixieRepo.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>So in practice, open sources.list:</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/Linux/09_EditAptSources.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/Linux/09_EditAptSources.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Paste the line, and “Ctrl + O”; “Enter”; “Ctrl + X” to save the changes.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/Linux/10_UpdatedEditAptSources.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/Linux/10_UpdatedEditAptSources.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Next, we will need to retrieve the keyID used to sign. This can be fetched from Ubuntu via the terminal.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/Linux/06_SecureAptKey.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
 
-<img data-src="images/Linux/12_AptKey.png" class="r-stretch"><p><br></p>
-</section>
+<img data-src="images/Linux/06_SecureAptKey.png" class="r-stretch"></section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/Linux/12_AptKey.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Then we need to export and write it</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/Linux/12_AptKey2.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/Linux/12_AptKey2.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Which if successful, will display the public key.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/Linux/12_PublicKey.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/Linux/12_PublicKey.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>With the above set up, we can proceed via our apt package manager to install both r-base and r-base-dev (which contains the equivalent of Rtools for Windows, or Xcode Command Line Tools for macOS).</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/Linux/05_BaseR.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
 
-<img data-src="images/Linux/13_InstallBaseAndDev.png" class="r-stretch"><p><br></p>
-</section>
+<img data-src="images/Linux/05_BaseR.png" class="r-stretch"></section>
 <section class="slide level2">
 
 
-<img data-src="images/Linux/13_Install.png" class="r-stretch"><p><br></p>
-</section>
+<img data-src="images/Linux/13_InstallBaseAndDev.png" class="r-stretch"></section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/Linux/13_Install.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>And if all goes well, R should now be installed.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="installing-git" class="slide level2">
 <h2>Installing Git</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># sudo apt install git</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="installing-positron" class="slide level2">
 <h2>Installing Positron</h2>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Finally, you will need to install <a href="https://positron.posit.co/">Positron</a>. It will be the integrated development environment (IDE) we will be using for the course.</p>
 <p>First, navigate to their <a href="https://positron.posit.co/">homepage</a>, and select the blue Download option button on the upper-right.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/Windows/25_Positron.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/Windows/25_Positron.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>You will then need to accept the Elastic License agreement to use the software (we will cover this source-available license type and what it does later in the course).</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/Linux/15_TermsService.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/Linux/15_TermsService.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>With the license accepted, you will be able to select distribution and architecture.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/Linux/16_LinuxFlavor.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/Linux/16_LinuxFlavor.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Once the Download completes, proceed to install the .deb package as you would nornally. GUI example via Discover below.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/Linux/17_DebPackageInstall.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/Linux/17_DebPackageInstall.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Depending on your configurations, you may be asked to exert your sudo powers.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/Linux/18_Password.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
-<p>Once this completes, you should now be able to launch the software for the first time.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 
-<img data-src="images/Linux/19_InstallSuccess.png" class="r-stretch"><p><br></p>
+<img data-src="images/Linux/18_Password.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
+<p>Once this completes, you should now be able to launch the software for the first time.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
+<section class="slide level2">
+
+
+<img data-src="images/Linux/19_InstallSuccess.png" class="r-stretch"></section>
 <section class="slide level2">
 
 </section></section>
 <section>
 <section id="connecting-github-and-positron" class="title-slide slide level1 center">
 <h1>Connecting GitHub and Positron</h1>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Now that you have all the software installed, we need to make sure that everything is communicating properly with each other. To do this, we will start by making sure your GitHub account and Positron are connected.</p>
 <p>When opening Positron for the first time, you will encounter the following view:</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/Linux/20_PositronStart.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/Linux/20_PositronStart.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>We will go over the various aspects of using Positron in the next <a href="../../course/00_Positron/index.html">section</a>. For now select the “Start Session” button on the upper right.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/Linux/20_PositronStart.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/Linux/20_PositronStart.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Then select the most recent/up-to-date R version.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/Linux/21_R.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/Linux/21_R.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>R will proceed to activate, and you will see a message appear in the bottom center window (ie. console)</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/Linux/22_RSuccess.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/Linux/22_RSuccess.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Congratulations, we now know R is working correctly. Next up, connecting your GitHub account to Positron. To make this process easier, first log into your <a href="https://github.com/">GitHub</a> account from your preferred web browser.</p>
 <p>Once this is done, return to Positron, and click on the profile Icon and select “Sign with GitHub” option.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/Linux/23_GitHub.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/Linux/23_GitHub.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Positron will provide a popup containing a code you will need to give to GitHub to set up authentication. Proceed to click on the “Copy &amp; Continue to GitHub” button.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/Linux/24_Code.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/Linux/24_Code.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>If you are already signed in, it will ask which account you want to connect Positron with. Select your GitHub account.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/Linux/25_GitHubAccount.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/Linux/25_GitHubAccount.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>You will then be prompted to paste the one-time code provided by Positron. Once pasted, click on Continue.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/Linux/26_EnterNumber.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/Linux/26_EnterNumber.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>And select “Authorize posit-dev” to authorize Positron to interact with your GitHub Account.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/Linux/27_Confirm.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/Linux/27_Confirm.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>And if all works out, you should see the following succes page</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/Linux/28_ConfirmationPage.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
-<p>Returning to Positron, check the profile tab on the lower left and verify that it now shows your GitHub account. If it does, congrats! If not, close Positron, check the tab again, and repeat the above one-time code steps if needed.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 
-<img data-src="images/Linux/29_PositronSuccess.png" class="r-stretch"><p><br></p>
+<img data-src="images/Linux/28_ConfirmationPage.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
+<p>Returning to Positron, check the profile tab on the lower left and verify that it now shows your GitHub account. If it does, congrats! If not, close Positron, check the tab again, and repeat the above one-time code steps if needed.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
+<section class="slide level2">
+
+
+<img data-src="images/Linux/29_PositronSuccess.png" class="r-stretch"></section>
 <section class="slide level2">
 
 </section></section>
 <section>
 <section id="new-folder-from-git" class="title-slide slide level1 center">
 <h1>New Folder from Git</h1>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>With <a href="https://github.com/">GitHub</a> and Positron now connected, we will bring your two repositories (the README and the fork of CytometryInR) from GitHub to your local computer.</p>
 <p>To this, first navigate to the Folder icon on the upper-right, and select the “New Folder from Git” option</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/MacOS/24.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/MacOS/24.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Lets first bring in your forked version of the Cytometry in R repository. Depending on your GitHub username, you would either need to copy the URL from your browser, or swap in your username in place of UMGCCCFCSR in “https://github.com/UMGCCCFCSR/CytometryInR”</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/FolderFromGit1.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/FolderFromGit1.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>You will also be asked for a location to store your project folder. It is best to save the folder locally (avoid using OneDrive or other cloud locations for now), as it makes things easier to save or modify without running into permission issues. For most of our course examples, we will be saving our Project Folders under the Documents Folder.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/Import2.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/Import2.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>You may encounter a pop-up asking whether you trust the authors for that particular folder. For your own projects, you are the author, so go ahead and select Yes. Selecting No is a good precaution when bringing in a random GitHub project that you haven’t had time to properly vet.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/MacOS/28.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/MacOS/28.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>And with that done, you should now see the forked Cytometry in R course contents appear within Positron.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/Import2Done.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/Import2Done.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>We will now repeat the process to bring in youir GitHub profile’s ReadMe repository. Depending on your GitHub username, you would either need to copy the URL from your browser, or swap in your username twice in place for each UMGCCCFCSR: “https://github.com/UMGCCCFCSR/UMGCCCFCSR”</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/FolderFromGit2.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/FolderFromGit2.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>After pasting the URL, and selecting the folder to save your project folder to (Documents in our case), select OK.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/Import2.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
-<p>And after a quick import you should now see your ReadMe repository files available and ready to be modified on your local computer.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 
-<img data-src="images/Import2Done.png" class="r-stretch"><p><br></p>
+<img data-src="images/Import2.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
+<p>And after a quick import you should now see your ReadMe repository files available and ready to be modified on your local computer.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
+<section class="slide level2">
+
+
+<img data-src="images/Import2Done.png" class="r-stretch"></section>
 <section class="slide level2">
 
 </section></section>
 <section>
 <section id="wrap-up" class="title-slide slide level1 center">
 <h1>Wrap-up</h1>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>In this walkthrough, we installed R, Rtools, Git and Positron. We also made sure to connect Positron and your GitHub account, and brought copies of your repositories into local project folders. With this, you now have on your workstation the major pieces of software needed for the course.</p>
 <p>In the <a href="../../course/00_Positron/">next section</a>, we will delve into how to use Positron, and explore more how to use the connection you set up with GitHub to send <a href="../../course/00_Git/">changes</a> from your local repositories back to GitHub.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-<p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 

@@ -213,8 +213,21 @@ gtag('config', 'G-LZ35J3XE4D', { 'anonymize_ip': true});
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Intro to R</span></span>
+      <div class="sidebar-item-container"> 
+            <a href="../../course/01_InstallingRPackages/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Intro to R</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course/01_InstallingRPackages/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01 - Installing R Packages</span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
@@ -259,16 +272,17 @@ gtag('config', 'G-LZ35J3XE4D', { 'anonymize_ip': true});
   <ul class="collapse">
   <li><a href="#sync-your-fork" id="toc-sync-your-fork" class="nav-link" data-scroll-target="#sync-your-fork">Sync your Fork</a></li>
   <li><a href="#pull-to-local" id="toc-pull-to-local" class="nav-link" data-scroll-target="#pull-to-local">Pull to Local</a></li>
-  <li><a href="#create-a-branch" id="toc-create-a-branch" class="nav-link" data-scroll-target="#create-a-branch">Create a Branch</a></li>
   <li><a href="#create-own-folder-under-homeworks" id="toc-create-own-folder-under-homeworks" class="nav-link" data-scroll-target="#create-own-folder-under-homeworks">Create own Folder under Homeworks</a></li>
-  <li><a href="#copy-your-files" id="toc-copy-your-files" class="nav-link" data-scroll-target="#copy-your-files">Copy your files</a></li>
   <li><a href="#sign-off-commit" id="toc-sign-off-commit" class="nav-link" data-scroll-target="#sign-off-commit">Sign off Commit</a></li>
   <li><a href="#push-branch-to-github." id="toc-push-branch-to-github." class="nav-link" data-scroll-target="#push-branch-to-github.">Push Branch to GitHub.</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#re-sync-if-necessary" id="toc-re-sync-if-necessary" class="nav-link" data-scroll-target="#re-sync-if-necessary">Re-sync if necessary</a>
+  <ul>
   <li><a href="#open-a-pull-request" id="toc-open-a-pull-request" class="nav-link" data-scroll-target="#open-a-pull-request">Open a pull-request</a></li>
   <li><a href="#wait-for-feedback" id="toc-wait-for-feedback" class="nav-link" data-scroll-target="#wait-for-feedback">Wait for Feedback</a></li>
   <li><a href="#final-review-and-merge" id="toc-final-review-and-merge" class="nav-link" data-scroll-target="#final-review-and-merge">Final Review and Merge</a></li>
   <li><a href="#after-course" id="toc-after-course" class="nav-link" data-scroll-target="#after-course">After course</a></li>
-  </ul></li>
   </ul></li>
   <li><a href="#wrap-up" id="toc-wrap-up" class="nav-link" data-scroll-target="#wrap-up">Wrap-up</a></li>
   <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a></li>
@@ -407,48 +421,103 @@ gtag('config', 'G-LZ35J3XE4D', { 'anonymize_ip': true});
 <section id="sync-your-fork" class="level3">
 <h3 class="anchored" data-anchor-id="sync-your-fork">Sync your Fork</h3>
 <p>First off, make sure to Sync your fork of the Cytometry in R project. That makes sure that all the commits present are up-to-date and simplifies the process of having the pull-request being merged.</p>
+<p><img src="images/00_Sync.png" class="img-fluid"></p>
+<p><br></p>
+<hr>
+<p><img src="images/00_Compare.png" class="img-fluid"></p>
+<p><br></p>
+<hr>
+<p><img src="images/02_Synced.png" class="img-fluid"></p>
+<p><br></p>
+<hr>
 </section>
 <section id="pull-to-local" class="level3">
 <h3 class="anchored" data-anchor-id="pull-to-local">Pull to Local</h3>
-<p>Having Synced your branch, pull in the changes to your local computer.</p>
-</section>
-<section id="create-a-branch" class="level3">
-<h3 class="anchored" data-anchor-id="create-a-branch">Create a Branch</h3>
-<p>Using the terminal, create and switch to a branch named for that Week (Week1).</p>
+<p>Having Synced your branch on GitHub, return to your computer, open the CytometryInR repository and <a href="../../course/00_Git/index.html#pull">pull</a> in the changes locally.</p>
+<p><br></p>
+<hr>
 </section>
 <section id="create-own-folder-under-homeworks" class="level3">
 <h3 class="anchored" data-anchor-id="create-own-folder-under-homeworks">Create own Folder under Homeworks</h3>
-<p>Within the branch, under the course folder, you will find each week’s folders. Locate the week corresponding to the TakeHome problem, and within locate the homework folder. This folder will be empty except for a README file with instructions. This is then location where you will need to create your own Folder under.</p>
+<p>Under the course folder, you will find folders for each week. Within these folders find the homework folder. This will appear empty except for a README file with ionstructions. It is within this folder you will need to create your own folder.</p>
 <p>To ensure there are no conflicts on the pull-request merge, please use your GitHub username as the folder name.</p>
-</section>
-<section id="copy-your-files" class="level3">
-<h3 class="anchored" data-anchor-id="copy-your-files">Copy your files</h3>
-<p>Once you have your folder inside homework, go ahead and copy anything you are turning in. Remember, the goal is minimal reproducible example is the goal. Rendered Quarto Documents are preferred, but we will also accept scripts and small data files and images. a README.MD file with anything you want me to know,</p>
+<p><img src="images/09_Homework.png" class="img-fluid"></p>
+<p><br></p>
+<hr>
+<p>Once you have your folder inside homework, go ahead and copy anything you are turning in from their respective working project folders. Remember, the goal is minimal reproducible example is the goal. Rendered Quarto Documents are preferred, but we will also accept scripts and small data files and images. a README.MD file with anything you want me to know,</p>
+<p><img src="images/10_TakeHomeReturnStructure.png" class="img-fluid"></p>
+<p><br></p>
+<hr>
+<p><img src="images/11_SelfContained.png" class="img-fluid"></p>
+<p><br></p>
+<hr>
 </section>
 <section id="sign-off-commit" class="level3">
 <h3 class="anchored" data-anchor-id="sign-off-commit">Sign off Commit</h3>
 <p>Now that everything is present, Sign Off and Commit the change.</p>
+<p><img src="images/12_Commit.png" class="img-fluid"></p>
+<p><br></p>
+<hr>
 </section>
 <section id="push-branch-to-github." class="level3">
 <h3 class="anchored" data-anchor-id="push-branch-to-github.">Push Branch to GitHub.</h3>
 <p>Proceed to push the branch to GitHub.</p>
+<p><img src="images/13_Sync.png" class="img-fluid"></p>
+<p><br></p>
+<hr>
 </section>
+</section>
+</section>
+<section id="re-sync-if-necessary" class="level1">
+<h1>Re-sync if necessary</h1>
+<p>If additional changes have occured to the parent CytometryInR repository, go ahead and update your branch. As long as your edits occurred within your folder inside homework folders, they should still be able to merge.</p>
+<p><img src="images/17_SyncMaybe.png" class="img-fluid"></p>
+<p><br></p>
+<hr>
+<p><img src="images/18_Update.png" class="img-fluid"></p>
+<p><br></p>
+<hr>
 <section id="open-a-pull-request" class="level3">
 <h3 class="anchored" data-anchor-id="open-a-pull-request">Open a pull-request</h3>
-<p>Navigate to the Pull Request tab and create one, going from your respective week’s branch, to our homework branch. Since the only changes should have been within your folder within homeworks, they should be compatible with each other and capable of merging</p>
+<p>To start a pull request, click to see how your commit is ahead by</p>
+<p><img src="images/14_Ahead.png" class="img-fluid"></p>
+<p><br></p>
+<hr>
+<p>Next, switch from the parent CytometryInR main branch (used for the website and course) to the homework branch for that respective week (used for the take-home problems).</p>
+<p><img src="images/15_BranchSwitch.png" class="img-fluid"></p>
+<p><br></p>
+<hr>
+<p>Once this is done, select Pull request</p>
+<p><img src="images/16_PullRequest.png" class="img-fluid"></p>
+<p><br></p>
+<hr>
+<p>Make sure to triple check it’s bound for the homeworks branch. If you see that it is not capable of merging, verify that your commit only contains files within your respective homework username folder. Fill in the required fields of the pull request.</p>
+<p><img src="images/20_PullRequestHomeworks.png" class="img-fluid"></p>
+<p><br></p>
+<hr>
+<p>And when ready, create the pull request.</p>
+<p><br></p>
+<hr>
 </section>
 <section id="wait-for-feedback" class="level3">
 <h3 class="anchored" data-anchor-id="wait-for-feedback">Wait for Feedback</h3>
-<p>Once you have opened a Pull-request, we will review your work, offer constructive suggestiongs. If I ask for revisions, all you would need to do is update and commit again to your side of the local forked repository.</p>
+<p>On our end, once you have created a pull request, we will review your work, offer constructive suggestions, etc. If I ask for revisions, all you would need to do is update your files, commit again on your side of the local forked repository.</p>
+<p><img src="images/22_StartReviewProcess.png" class="img-fluid"></p>
+<p><br></p>
+<hr>
 </section>
 <section id="final-review-and-merge" class="level3">
 <h3 class="anchored" data-anchor-id="final-review-and-merge">Final Review and Merge</h3>
 <p>If all is good, we will merge the pull request and your solution to the take-home problems will now be available on the homework branch.</p>
+<p><img src="images/23_Merge.png" class="img-fluid"></p>
+<p><br></p>
+<hr>
 </section>
 <section id="after-course" class="level3">
 <h3 class="anchored" data-anchor-id="after-course">After course</h3>
 <p>After the course completes, we will merge homework branch with the main branch, making the community solutions to the take-home problems additional coding examples that can be used by others following along after the course concludes.</p>
-</section>
+<p><br></p>
+<hr>
 </section>
 </section>
 <section id="wrap-up" class="level1">

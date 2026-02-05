@@ -154,47 +154,164 @@ We will outline the basic steps of how to set up and open a pull-request, to hel
 
 First off, make sure to Sync your fork of the Cytometry in R project. That makes sure that all the commits present are up-to-date and simplifies the process of having the pull-request being merged. 
 
+
+![](images/00_Sync.png)
+
+<br>
+
+---
+
+![](images/00_Compare.png)
+
+<br>
+
+---
+
+![](images/02_Synced.png)
+
+<br>
+
+---
+
 ### Pull to Local
 
-Having Synced your branch, pull in the changes to your local computer. 
+Having Synced your branch on GitHub, return to your computer, open the CytometryInR repository and [pull](/course/00_Git/index.qmd#pull) in the changes locally. 
 
-### Create a Branch
+<br>
 
-Using the terminal, create and switch to a branch named for that Week (Week1). 
+---
 
 ### Create own Folder under Homeworks
 
-Within the branch, under the course folder, you will find each week's folders. Locate the week corresponding to the TakeHome problem, and within locate the homework folder. This folder will be empty except for a README file with instructions.  This is then location where you will need to create your own Folder under.
+Under the course folder, you will find folders for each week. Within these folders find the homework folder. This will appear empty except for a README file with ionstructions. It is within this folder you will need to create your own folder. 
 
 To ensure there are no conflicts on the pull-request merge, please use your GitHub username as the folder name. 
 
-### Copy your files
+![](images/09_Homework.png)
 
-Once you have your folder inside homework, go ahead and copy anything you are turning in. Remember, the goal is minimal reproducible example is the goal. Rendered Quarto Documents are preferred, but we will also accept scripts and small data files and images. a README.MD file with anything you want me to know,
+<br>
+
+---
+
+Once you have your folder inside homework, go ahead and copy anything you are turning in from their respective working project folders. Remember, the goal is minimal reproducible example is the goal. Rendered Quarto Documents are preferred, but we will also accept scripts and small data files and images. a README.MD file with anything you want me to know,
+
+![](images/10_TakeHomeReturnStructure.png)
+
+<br>
+
+---
+
+
+![](images/11_SelfContained.png)
+
+
+<br>
+
+---
 
 ### Sign off Commit
 
 Now that everything is present, Sign Off and Commit the change. 
 
+![](images/12_Commit.png)
+
+<br>
+
+---
+
 ### Push Branch to GitHub. 
 
 Proceed to push the branch to GitHub. 
 
+![](images/13_Sync.png)
+
+<br>
+
+---
+
+# Re-sync if necessary
+
+If additional changes have occured to the parent CytometryInR repository, go ahead and update your branch. As long as your edits occurred within your folder inside homework folders, they should still be able to merge. 
+
+![](images/17_SyncMaybe.png)
+
+<br>
+
+---
+
+![](images/18_Update.png)
+
+<br>
+
+---
+
 ### Open a pull-request
 
-Navigate to the Pull Request tab and create one, going from your respective week's branch, to our homework branch. Since the only changes should have been within your folder within homeworks, they should be compatible with each other and capable of merging
+To start a pull request, click to see how your commit is ahead by
+
+![](images/14_Ahead.png)
+
+<br>
+
+---
+
+Next, switch from the parent CytometryInR main branch (used for the website and course) to the homework branch for that respective week (used for the take-home problems). 
+
+![](images/15_BranchSwitch.png)
+
+<br>
+
+---
+
+Once this is done, select Pull request
+
+![](images/16_PullRequest.png)
+
+<br>
+
+---
+
+Make sure to triple check it's bound for the homeworks branch. If you see that it is not capable of merging, verify that your commit only contains files within your respective homework username folder. Fill in the required fields of the pull request. 
+
+![](images/20_PullRequestHomeworks.png)
+
+<br>
+
+---
+
+And when ready, create the pull request. 
+
+<br>
+
+---
 
 ### Wait for Feedback
 
-Once you have opened a Pull-request, we will review your work, offer constructive suggestiongs. If I ask for revisions, all you would need to do is update and commit again to your side of the local forked repository.
+On our end, once you have created a pull request, we will review your work, offer constructive suggestions, etc.  If I ask for revisions, all you would need to do is update your files, commit again on your side of the local forked repository.
+
+![](images/22_StartReviewProcess.png)
+
+<br>
+
+---
 
 ### Final Review and Merge
 
 If all is good, we will merge the pull request and your solution to the take-home problems will now be available on the homework branch.
 
+![](images/23_Merge.png)
+
+<br>
+
+---
+
 ### After course
 
 After the course completes, we will merge homework branch with the main branch, making the community solutions to the take-home problems  additional coding examples that can be used by others following along after the course concludes. 
+
+<br>
+
+---
 
 # Wrap-up
 

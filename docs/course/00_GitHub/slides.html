@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.7.32">
 
   <meta name="author" content="David Rach">
-  <meta name="dcterms.date" content="2026-01-21">
+  <meta name="dcterms.date" content="2026-02-01">
   <title>Cytometry in R – Using GitHub</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -147,7 +147,7 @@ David Rach
 </div>
 </div>
 
-  <p class="date">2026-01-21</p>
+  <p class="date">2026-02-01</p>
 </section>
 <section class="slide level2">
 
@@ -159,41 +159,91 @@ David Rach
 <section>
 <section id="background" class="title-slide slide level1 center">
 <h1>Background</h1>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>When working with code, it is very important to stay organized. You ultimately want to avoid being in a scenario where you need some code you wrote the previous month, and then having to search through multiple .R files, scattered across multiple folders, external hard-drives, and computers to find it. Likewise, you want to avoid ending up having identified multiple similarly-named copies of your original file that have all since diverged slightly from each other in some way that you have long since forgotten.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
 
 <img data-src="https://phdcomics.com/comics/archive/phd101212s.gif" style="width:50.0%" class="r-stretch"></section>
 <section class="slide level2">
 
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Ideally, everything needed for your coding script to successfully run should be kept within a project-specific folder. This ensures, that should you transfer it to another computer (whether your own or a colleagues) that you would still be able to recreate the scripts output.</p>
 <p>Likewise, if you make changes to your script, and your code stops working (no longer returns the expected output, ie. breaks), having a record of what changes were made since the last working version would be very helpful in pinpointing what went wrong. For beginners, this often ends up being a typo in a function name, or an accidentally misplaced comma somewhere in your document.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>For these reasons, in this course, we will be extensively using the version control software <a href="https://git-scm.com/">Git</a> from the very beginning. We will also have you create a <a href="https://github.com/">GitHub</a> account, which will allow you to back-up your coding projects online as private repositories. Not only is this useful in case something happens to your computer, but it allows you to switch between separate computers while still having ready access to all your code, avoiding ending up with divergent copies on each computer.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Additionally, since all the material for this course is being hosted on a public GitHub repository, once you have set up your GitHub account you will be able to retrieve all the new materials and changes by simply refreshing (ie. syncing) your version of the course folder (ie. fork) once a week. Your GitHub account will also be needed when posting or asking questions on the <a href="https://github.com/UMGCCCFCSR/CytometryInR/discussions">Discussion Forum</a>.</p>
 <p>In this walk-through, we will go through setting up a GitHub account, and make sure you are familiar with some of the elements and locations that we will be circling back to throughout the course.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
+<section class="slide level2">
+
+
+<img data-src="../../images/Placeholder.png" class="r-stretch"></section>
 <section class="slide level2">
 
 </section></section>
@@ -204,358 +254,482 @@ David Rach
 </section>
 <section id="creating-an-account" class="slide level2">
 <h2>Creating an Account</h2>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>We will first navigate to the <a href="https://github.com/">GitHub homepage</a>. If you haven’t previously created an account, click on the button to sign up for an account.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/01_GitHub.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/01_GitHub.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>On the sign-up page, you will fill in various details needed to create an account. Please remember that GitHub usernames are visible to others. Additionally, if you end up sharing code with others as part of a manuscript, or use GitHub to create a personal portfolio website in the future, your username will appear as part of the URL.</p>
 <p>For example, in my case, my user name is DavidRach, so my GitHub profile ends up as: <a href="https://github.com/DavidRach">https://github.com/DavidRach</a>. For our course, the core’s GitHub user name is UMGCCCFCSR, so the github profile ends up as <a href="https://github.com/UMGCCCFCSR">https://github.com/UMGCCCFCSR</a>, while the course website ends up as <a href="https://umgcccfcsr.github.io/CytometryInR/">https://umgcccfcsr.github.io/CytometryInR/</a></p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/02_GithubSignup.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/02_GithubSignup.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Once you have entered your new account information, you will need your account creation by entering the code sent to the email address that you provided.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/03_Github2Factor.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
-<p>Once account creation has been confirmed, please proceed to login to GitHub for the first time.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 
-<img data-src="images/04_Login.png" class="r-stretch"><p><br></p>
+<img data-src="images/03_Github2Factor.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
+<p>Once account creation has been confirmed, please proceed to login to GitHub for the first time.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
+<section class="slide level2">
+
+
+<img data-src="images/04_Login.png" class="r-stretch"></section>
 <section id="github-profile" class="slide level2">
 <h2>GitHub Profile</h2>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Upon creating a brand new account, your GitHub homepage will initially look rather empty, and can be intimidating to navigate for the first time.</p>
 <p>For now, on the upper right, go ahead and click on the default profile picture icon…</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/05_YourIcon.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/05_YourIcon.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>And then select Profile…</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/05_Profile.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/05_Profile.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>You are now on your public GitHub profile page. For a newly created account, it will look something like this:</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/06_EditIcon.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/06_EditIcon.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>For a more established account, this page will look a <a href="https://github.com/DrCytometer">little different</a>, and can be customized to highlight various projects that you are working on.</p>
 <p>For this course, we will have you set up a basic GitHub profile page for now, although you are free to customize and personalize it as much as you may want to in the future!</p>
 <p>To start, first select the edit profile button on the left below the default profile icon.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/06_EditIcon.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/06_EditIcon.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>You can then proceed to fill in any details that you feel are relevant and are comfortable sharing.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/07_Basics.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/07_Basics.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>With the quick access details filled in, it is now time to navigate to the Settings tab. You will return to the previous menu dropdown on the upper right, and instead of selecting Profile, click on the Settings option.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/05_Profile.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/05_Profile.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>You should now end up within your Public Profile Settings page.</p>
 <p>Feel free to edit the default profile picture, and any other fields that you feel are relevant. Once done, continue to scroll down the page past ORCID ID.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/08_ProfileSetup.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/08_ProfileSetup.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>When you reach Contributions and Activity, go ahead and select the option to include private repositories in the activity summary graphic. Then scroll down and click save. You will now be returned to your GitHub profile page.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/09_SelectThisOneSuggested.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/09_SelectThisOneSuggested.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>At the top of the profile, you will see a “Your contributions” calendar graph. For a new account, it will look like this:</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/10_UpdatedGitHubProfile.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/10_UpdatedGitHubProfile.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>If you are just starting out, this chart will be mostly empty, but will fill in as you work on projects, see <a href="https://github.com/cararthompson">here</a> as an example.</p>
 <p>Every time you save your code (ie. make a commit), the activity will be reflected in this chart. By clicking the option in settings, code made within a private repository will remain private, but will count toward your contribution chart. As you progress through the course, this will provide a nice visual reminder of the progress you have made, and the obstacles that you have overcome.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/10_UpdatedGitHubProfile.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
+<section class="slide level2">
+
+
+<img data-src="images/10_UpdatedGitHubProfile.png" class="r-stretch"></section>
 <section id="github-readme" class="slide level2">
 <h2>GitHub ReadMe</h2>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>With this done, we modify your GitHub profile by adding one customized element, a ReadMe page. This will be used for a couple projects during the course, and can be personalized further in the future.</p>
 <p>To create a ReadMe page for your profile, we will navigate to the upper right of the screen and click on the + sign.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/11_UpdatedGitHubProfile2.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/11_UpdatedGitHubProfile2.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>We will then select the Create New Repository option.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/12_NewRepository.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/12_NewRepository.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>You will next create a repository (folder), naming it exactly the same as your username. This will be recognized by GitHub as being a special type of repository corresponding to the ReadMe section of your profile.</p>
 <p>For options, leave the visibility as Public, and Add README set to On. And proceed to Create Repository.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/13_ReadMe.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/13_ReadMe.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Having created the repository (folder), you will see it has been populated by a few default files. For now, you will be editing the README.md file. On a new repository, the easiest way to access it is by clicking the green option on the right side of your screen.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/14_EditButton.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/14_EditButton.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>With the README.md file now opened, you will be able to see generic filler text that is suggested by GitHub.</p>
 <p>For this course, I will ask you to add a couple elements for now. You are free to return and further personalize it later if you wish to do so.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/15_DefaultText.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/15_DefaultText.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>The type of file that we are working with is a <a href="https://www.markdownguide.org/basic-syntax/">Markdown</a> file, which can allow for a bunch of customizations which we will cover throughout the course.</p>
 <p>For now, please add and customize the following questions:</p>
 <p>Cytometry In R</p>
@@ -563,334 +737,427 @@ David Rach
 <p>My Favorite Fluorophore/Metal-Isotope: Spark Blue 550</p>
 <p>Previous Coding Experience: Repeatedly Calling IT</p>
 <p>What I Hope to Get From This Course: A faster way to match FlowSOM clusters to their likely cell type.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/16_ReadMeContent.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/16_ReadMeContent.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Next, to save you will select the green “Commit changes” button. We will cover the meaning of “Commit” more in-depth during the <a href="../../course/00_Git/index.html">Git</a> section.</p>
 <p>For now, write a short summary of the change you made to the file in the “Commit message”, and any additional details within the “Extended description” field. When ready, click the green “Commit changes” button.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/17_ReadMeCommit.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/17_ReadMeCommit.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>You will now be able to see the updated README.md file, as you can see in our example below. To make additional edits, you would select the pencil icon on the right-center side of the screen.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/18_ReadMeRendered.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/18_ReadMeRendered.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Next, navigate back to your profile page (by clicking on either your username or the Overview option on the tabs).</p>
 <p>You will see that the README file contents are now displayed on the upper portion of your GitHub profile. Feel free to circle back and customize this further to your liking.</p>
 <p>In this last example, we created your first repository (folder). Since this is public, it is now shown below the README section of the profile under your repositories. You can also see that your commits made in the process of making the changes are now shown both in the Contributions graph, and under the Contributor Activity summary at the bottom of the page.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/19_UpdatedProfile.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
+<section class="slide level2">
+
+
+<img data-src="images/19_UpdatedProfile.png" class="r-stretch"></section>
 <section id="github-repository" class="slide level2">
 <h2>GitHub Repository</h2>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Having set up your GitHub profile, it now is time to make sure you have access to our course materials. We will have you navigate to our course’s <a href="https://github.com/UMGCCCFCSR">GitHub profile</a></p>
 <p>On the profile page, you will be able to see our version of the README, our repositories, and the Contributions graph and Contribution activity sections.</p>
 <p>Please click on the <a href="https://github.com/UMGCCCFCSR/CytometryInR">CytometryInR</a> to navigate to its repository (folder)</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/20_ToCourseProfile.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/20_ToCourseProfile.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>On this page, you will see several elements that you will be circling back to throughout the course.</p>
 <p>For our course, we will be extentsively ussing the <a href="https://github.com/UMGCCCFCSR/CytometryInR/discussions">Discussions</a> page as a community forum. If you have any questions, are looking for feedback, or want to show off something that you worked on, this is the place for it. This will also help make sure</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/21_Discussions.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/21_Discussions.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>The <a href="https://github.com/UMGCCCFCSR/CytometryInR/issues">Issues</a> tab is where you will need to go to open an Issue if you encounter a bug (or major documentation typo), so that I can cicle back and correct them when I have the chance.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/21_BugReports.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/21_BugReports.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>To submit the optional take-home problems, you would turn in these problems by going to the <a href="https://github.com/UMGCCCFCSR/CytometryInR/pulls">Pull Request</a> tab, and initiating a pull request between your forked version of the project and our “homework” branch (more details on this later).</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/21_HomeworkPullRequest.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/21_HomeworkPullRequest.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Optionally, you can “Star” a repository. This is basically the GitHub equivalent of liking a project. In our case, we will often star a repository since it will be saved under the Stars tab of our profile, which makes finding it again significantly easier a few weeks later after forgetting the repository name.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/21_Stars.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/21_Stars.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>To see projects that you have starred, you can select the Stars option from the same dropdown you used to get to Settings.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/22_Stars.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
-<p>Or from your GitHub profile, you can see these under <a href="https://github.com/DavidRach?tab=stars">Stars</a> tab.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 
-<img data-src="images/22_YourStarredRepositories.png" class="r-stretch"><p><br></p>
+<img data-src="images/22_Stars.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
+<p>Or from your GitHub profile, you can see these under <a href="https://github.com/DavidRach?tab=stars">Stars</a> tab.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
+<section class="slide level2">
+
+
+<img data-src="images/22_YourStarredRepositories.png" class="r-stretch"></section>
 <section id="forking-cytometryinr" class="slide level2">
 <h2>Forking CytometryInR</h2>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Before we go further, we will need you to make your own copy of the <a href="https://github.com/UMGCCCFCSR/CytometryInR/">course repository</a> (ie. fork it). This will allow you to quickly retrieve all the new materials and code corrections by simply rereshing (ie. syncing) your forked version with our upstream parent branch once a week.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-<p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>To fork the <a href="https://github.com/UMGCCCFCSR/CytometryInR/">course repository</a>, you will select the “Fork repository” option on the upper-center portion of your screen.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/23_ForkIt.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/23_ForkIt.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>By “Fork-ing” a repository, you are basically copying the contents from that repository to a newly created repository on your own GitHub. Forked projects are still linked to the original (parent) fork, and can retrieve any updates via syncing, as well as return changes via a pull request.</p>
 <p>For this course, when you create the fork, keep the existing repository name (“CytometryInR”). Importantly, select the copy main branch option. This will ensure you only get the code and data needed for the course copied over, and don’t end up with your entire hard-drive filled will website elements, or other people’s solutions to the take-home problems.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/24_ForkMainBranch.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/24_ForkMainBranch.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>Once you have created the fork, you will see your copy of the forked repository under your own username. Seeing as you have just now forked the project, you will see the notification that you are up to date with the existing version of the CytometryInR course repository.</p>
 <p>As we go through the course, and new material is released each week on Sunday at 2200 EST (Monday 0300 GMT+0), you will see this changed to behind the main branch by a number of commits, and have the option to sync in the changes to your fork to gain access to that week’s material.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/25_YourForkedBranch.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
+
+<img data-src="images/25_YourForkedBranch.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>If you remember, previously under your GitHub profile, the Repositories tab only contained the repository corresponding to your ReadMe section.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-<img data-src="images/YourRepositories.png" class="r-stretch"><p><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<aside class="notes">
-<p>You should however now be able to see your fork of the CytometryInR repository. As you add project specific repositories throughout the course, they will also appear here.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 
-<img data-src="images/YourUpdatedRepos.png" class="r-stretch"><p><br></p>
+<img data-src="images/YourRepositories.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
+<p>You should however now be able to see your fork of the CytometryInR repository. As you add project specific repositories throughout the course, they will also appear here.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
+<section class="slide level2">
+
+
+<img data-src="images/YourUpdatedRepos.png" class="r-stretch"></section>
 <section class="slide level2">
 
 </section></section>
 <section id="wrap-up" class="title-slide slide level1 center">
 <h1>Wrap-Up</h1>
-<aside class="notes">
+<div class="fragment">
+<div title=".">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.</strong></p>
+</div>
+<div class="callout-content">
 <p>We have now completed our walk-through of setting up a GitHub account. At this point, you should have modified your GitHub profile, added a README section, and most importantly, forked the <a href="https://github.com/UMGCCCFCSR/CytometryInR/">CytometryInR</a> repository so that you can easily retrieve the new course materials each week.</p>
 <p>Next up, we will have you proceed to installing the required software to your computer that will be needed throughout the course. Installation instructions will vary depending on your computer’s operating system, so please follow the appropiate walkthrough.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 
 <section id="additional-resources" class="title-slide slide level1 center">

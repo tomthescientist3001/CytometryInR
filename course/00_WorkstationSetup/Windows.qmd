@@ -407,6 +407,12 @@ With the license accepted, you will be able to select your operating system. In 
 
 ---
 
+Please note, if you are using a Windows computer with an ARM based chip (like is the case with Snapdragons), you will need to download the installed from the Positron's GitHub [Release Page](), as they are still testing some features. 
+
+![](images/Windows/WindowsArm.png)
+
+---
+
 You will then be prompted to select the location you want to save the installer to. We will generally save this to either Downloads or Desktop to make finding it easier.
 
 ![](images/Windows/27_InstallerLocation.png)
