@@ -4,7 +4,7 @@
     "href": "course/01_InstallingRPackages/index.html",
     "title": "01 - Installing R Packages",
     "section": "",
-    "text": "For screen-shot slides, click here\nFor the YouTube livestream recording (starting Wednesday), click here\nWelcome to the first week of Cytometry in R! This week we will be diving into how R packages work, and the how to go about installing them.\nBefore getting started, please make sure you have completed the creating a GitHub and Workstation Setup walk-throughs, since we will begin where they left off once the required software was successfully installed.",
+    "text": "For the YouTube livestream recording, see here\nFor screen-shot slides, click here\nWelcome to the first week of Cytometry in R! This week we will be diving into how R packages work, and the how to go about installing them.\nBefore getting started, please make sure you have completed the creating a GitHub and Workstation Setup walk-throughs, since we will begin where they left off once the required software was successfully installed.",
     "crumbs": [
       "About",
       "Intro to R"
@@ -159,7 +159,7 @@
     "href": "course/00_WorkstationSetup/Windows.html",
     "title": "Installing Software on Windows",
     "section": "",
-    "text": "For screen-shots slides, click here\nFor the YouTube narration, click here\nThis is the software installation walkthrough for those whose computers are running Windows. Based on our pre-course interest form, you make up the majority of course participants."
+    "text": "For the YouTube livestream recording, see here\nFor screen-shots slides, click here\nThis is the software installation walkthrough for those whose computers are running Windows. Based on our pre-course interest form, you make up the majority of course participants."
   },
   {
     "objectID": "course/00_WorkstationSetup/Windows.html#installing-r",
@@ -242,7 +242,7 @@
     "href": "course/00_WorkstationSetup/MacOS.html",
     "title": "Installing Software on MacOS",
     "section": "",
-    "text": "For screen-shot slides, click here\nFor the YouTube narration, click here\nThis is the software installation walkthrough for those whose computers are running MacOS. Based on our pre-course interest form, you make up a solid proportion of the course participants."
+    "text": "For the YouTube livestream recording, see here\nFor screen-shot slides, click here\nThis is the software installation walkthrough for those whose computers are running MacOS. Based on our pre-course interest form, you make up a solid proportion of the course participants."
   },
   {
     "objectID": "course/00_WorkstationSetup/MacOS.html#installing-r",
@@ -366,7 +366,7 @@
     "href": "course/00_Positron/index.html",
     "title": "Using Positron",
     "section": "",
-    "text": "For screen-shot slides, click here\nFor the YouTube narration, click here",
+    "text": "For the YouTube livestream recording, see here\nFor screen-shot slides, click here",
     "crumbs": [
       "About",
       "Getting Started",
@@ -1057,7 +1057,7 @@
     "href": "course/00_WorkstationSetup/Linux.html",
     "title": "Installing Software on Linux",
     "section": "",
-    "text": "For screen-shot slides, click here\nFor the YouTube narration, click here\nThis is the software installation walkthrough for those whose computers are running Linux. First off, welcome! Based on our pre-course interest form, there was a suprising number of you daily-drivers out there! However, a CytometryInR interest form is unlikely to be representative of the general population, so please stash all Year of the Linux desktop banners until further notice."
+    "text": "For the YouTube livestream recording, see here\nFor screen-shot slides, click here\nThis is the software installation walkthrough for those whose computers are running Linux. First off, welcome! Based on our pre-course interest form, there was a suprising number of you daily-drivers out there! However, a CytometryInR interest form is unlikely to be representative of the general population, so please stash all Year of the Linux desktop banners until further notice."
   },
   {
     "objectID": "course/00_WorkstationSetup/Linux.html#debian-based-distros",
