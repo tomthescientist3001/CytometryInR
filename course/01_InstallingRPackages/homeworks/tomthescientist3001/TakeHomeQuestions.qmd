@@ -1,19 +1,14 @@
 ---
-title: Turning In Optional Take-Home Problems
-format: docx
+title: "Turning In Optional Take-Home Problems"
+format: html
+embed-resources: true
+toc: true
 ---
 
 This is an example of turning in an assignment.
 
-```{r}
-print(“Hello”)
-```
 # Problem 1
 Based on the PeacoQC package documentation (version 1.20.0), the package contains 5 main functions.
-
-```{r}
-getwd()
-```
 
 # Problem 2
 There are currently 69 packages under FlowCytometry. The most author/maintainer is Givanna Putri with the package "SuperCellCyto".
